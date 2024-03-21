@@ -84,9 +84,9 @@ const FirstSection = (props: Props) => {
             <Image
               src={"/images/mobile.png"}
               alt="mobile"
-              width={130}
-              height={130}
-              className="w-auto h-auto rounded-md hover:scale-150 transition-all duration-300"
+              width={120}
+              height={120}
+              className="aspect-auto w-auto h-auto rounded-md scale-110 hover:scale-125 transition-all duration-300"
             />
           </div>
         </div>

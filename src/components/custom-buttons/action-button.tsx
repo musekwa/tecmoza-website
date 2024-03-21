@@ -31,7 +31,7 @@ const ActionButton = ({
 
 
   return (
-    <span onClick={onclick} className='cursor-pointer'>
+    <span onClick={onClick} className='cursor-pointer'>
         {children}
     </span>
   )

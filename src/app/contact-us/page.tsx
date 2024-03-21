@@ -1,44 +1,29 @@
-import { Autocomplete, AutocompleteItem, Input } from "@nextui-org/react";
-import { ChevronDown } from "lucide-react";
-import React, { useState } from "react";
-import { SelectorIcon } from "../../components/selector-icon";
-// import ContactForm from "./_components/contact-form";
-
-import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
-import GoogleMaps from "@/components/google-maps";
-import ContactForm from "./_components/contact";
+import React from "react";
+import ContactForm from "./_components/contact-form";
+import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa6";
 
 type Props = {};
 
-const ContactPage = (props: Props) => {
-
+const SendMessagePage = (props: Props) => {
   return (
-    <div className="px-6 lg:px-24 pt-6 h-full">
-      <div className="w-[75px] h-1 bg-yellow-500 my-8" />
+    <div className="px-6 lg:px-24 pt-6">
+      {/* <h1 className="text-2xl font-bold text-center">Contactar-Nos</h1> */}
 
-      <div className="flex flex-col-reverse md:flex-row w-full ">
-        <div className="w-full md:w-1/2">
-          <h1 className="text-2xl lg:text-4xl font-bold py-6">Contactar-Nos</h1>
-          <p className="text-[14px] lg:text-[18px] tracking-wider leading-loose text-justify">
+      <div className="flex flex-col-reverse lg:flex-row gap-8 justify-between">
+        <div className="w-full">
+          <ContactForm />
+        </div>
+
+        <div className="w-full lg:max-w-[300px] xl:max-w-[450px] bg-sky-200 text-right p-6 flex flex-col items-end">
+          <h1 className="text-xl lg:text-2xl text-black font-bold tracking-tight">
+            Entre em Contacto Connosco
+          </h1>
+          <div className="w-[75px] h-1 bg-yellow-500 my-4" />
+          <p className="text-[14px] tracking-wider leading-loose text-right">
             Precisa de uma equipe de desenvolvedores ou de um programador de
             excelência em Moçambique? Contacte-nos! Podemos ajudar a transformar
             o seu negócio a um preço acessível.
           </p>
-        </div>
-        {/* <GoogleMaps /> */}
-        <div></div>
-      </div>
-
-      <div className="flex flex-col-reverse md:flex-row gap-12 py-6 my-6">
-        <div className="w-full md:w-2/3 ">
-          {/* <ContactForm /> */}
-          <ContactForm />
-        </div>
-
-        <div className="w-full md:w-1/3 bg-sky-200 p-6">
-          <h1 className="text-xl lg:text-2xl text-black font-bold tracking-tight">
-            Entre em Contacto Conosco
-          </h1>
           <div className="w-[75px] h-1 bg-yellow-500 my-4" />
           <h1 className="text-xl lg:text-2xl text-sky-900 font-bold tracking-tight">
             MOÇAMBIQUE
@@ -64,4 +49,4 @@ const ContactPage = (props: Props) => {
   );
 };
 
-export default ContactPage;
+export default SendMessagePage;
