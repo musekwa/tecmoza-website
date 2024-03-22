@@ -35,6 +35,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                   {item.options.map((option) => {
                     return (
                       <Link
+                        key={option.label}
                         href={option.href}
                         className="pl-6"
                         onClick={handleLinkClick}
@@ -52,6 +53,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
           } else {
             return (
               <Link
+              key={item.title}
               href={"/"}
               className="
                 flex

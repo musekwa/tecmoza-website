@@ -13,9 +13,9 @@ export const NavigationMenuBar = (
   }: { setMenuOptions: (menu: MenuOptionsProps | null) => void },
   menuOptions: MenuOptionsProps
 ) => {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const renderMenu = (item: MenuItem) => {
     const { title, menu, options, href } = item;
-    const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const handleMouseEnter = (menu: string) => {
       setActiveMenu(menu);
       setMenuOptions({
