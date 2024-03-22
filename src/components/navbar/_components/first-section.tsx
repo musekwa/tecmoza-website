@@ -9,6 +9,7 @@ import React, { MutableRefObject, useRef } from "react";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import SecondSection from "./second-section";
+import Link from "next/link";
 
 const settings = {
   dots: false,
@@ -207,9 +208,11 @@ const FirstSection = (props: Props) => {
             uma solução de alta qualidade.
           </p>
         </div>
+        <Link href={"/contact-us"} >
         <Button size={"sm"} variant={"outline2"} className="gap-2 py-6">
           Contacte-Nos <ArrowRight className="w-4 h-4 text-sky-500" />
         </Button>
+        </Link>
         <div className="w-[200px] h-1 bg-yellow-500 my-2" />
 
       </div>
