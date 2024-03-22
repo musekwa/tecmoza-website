@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { MutableRefObject, useRef } from "react";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import SecondSection from "./second-section";
@@ -111,7 +111,7 @@ const marqueeImages = [
 type Props = {};
 
 const FirstSection = (props: Props) => {
-  let sliderRef = useRef();
+  // let sliderRef = useRef(null);
   return (
     <section>
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -215,7 +215,7 @@ const FirstSection = (props: Props) => {
       </div>
      
         <Slider
-          ref={(slider) => (sliderRef = slider)}
+          // ref={(slider) => (sliderRef = slider)}
           {...settings}
           className=" w-full h-full"
         >
