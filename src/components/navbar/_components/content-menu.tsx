@@ -15,7 +15,7 @@ const ContentMenu: React.FC<ContentMenuProps> = ({ options }) => {
           <Link href={option.href} key={index}>
             <div className="cursor-pointer hover:bg-gray-100 p-2 rounded-3xl">
               <div className="flex gap-4">
-                <div>{option.emoji}</div>
+                <div>{option.icon}</div>
                 <div>{option.label}</div>
               </div>
             </div>
