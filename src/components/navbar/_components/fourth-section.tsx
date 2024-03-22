@@ -91,7 +91,7 @@ const slickItems = [
 type Props = {};
 
 const FourthSection = (props: Props) => {
-  let sliderRef = useRef(null);
+  // let sliderRef = useRef(null);
   return (
     <section className=" ">
       <div className="flex flex-col">
@@ -105,7 +105,9 @@ const FourthSection = (props: Props) => {
         </p>
       </div>
       <div className="slider-container gap-3  ">
-        <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
+        <Slider 
+        // ref={(slider) => (sliderRef = slider)} 
+        {...settings}>
           {slickItems.map((item, index) => (
             <div key={index} className="flex justify-center">
               <div className="flex flex-col justify-center items-center h-32 w-32 bg-white rounded-md">
