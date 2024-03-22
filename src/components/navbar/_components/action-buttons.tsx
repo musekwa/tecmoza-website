@@ -62,7 +62,7 @@ const ActionButtons = () => {
   
         "
           >
-            Contactar-Nos
+            Contacte-Nos
           </Button>
         </Link>
       </div>

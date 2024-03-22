@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Logo from "./logo";
 import {
@@ -12,10 +13,16 @@ import {
 } from "lucide-react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+import { Form } from "./ui/form";
+import { Input } from "./ui/input";
+import UserSubscriptionForm from "./user-subscription/user-subscription-form";
+import UserSubscription from "./user-subscription/user-subscription";
+import { useDisclosure } from "@nextui-org/react";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  // const {isOpen, onOpen, onOpenChange} = useDisclosure();
   return (
     <footer className=" bg-sky-500 text-white px-4 lg:px-24 pt-2 mt-2">
       <div className="xs:grid xs:grid-cols-1 lg:flex lg:flex-row lg:justify-between gap-6">
@@ -52,13 +59,13 @@ const Footer = (props: Props) => {
 
         <ul className="w-fit flex flex-col gap-1 lg:gap-2 ">
           <li>
-            <Link href={"/about"}>- Sobre Nós</Link>
+            <Link href={"/about"}>- Quem Somos?</Link>
           </li>
           <li>
-            <Link href={"/blog"}>- Blog</Link>
+            <Link href={"/blog"}>- Nossos Serviços</Link>
           </li>
           <li>
-            <Link href={"/career"}>- Oportunidades</Link>
+            <Link href={"/career"}>- Blog</Link>
           </li>
           <li>
             <Link href={"/contact"}>- Contactar-Nos</Link>
@@ -68,13 +75,21 @@ const Footer = (props: Props) => {
         <div className="h-0.5 w-24 bg-white my-6 lg:hidden" />
 
         <div className="w-fit flex flex-row items-start gap-2 ">
-            <MapPin size={16} className="mt-2" />
+          <MapPin size={16} className="mt-2" />
           <div className="tex-[13px]">
             <h1 className="font-bold text-xl lg:text-2xl">
               Mozambique, Maputo
             </h1>
             <p>Av. 25 de Setembro, No. 412</p>
           </div>
+        </div>
+      </div>
+      <div className="flex justify-end">
+        <div className="flex gap-4 items-center">
+          <p className="text-[12px]">
+            Subscreva à nossa e-newsLetter e <br />receba periodicamente atualizações da TECMOZA!
+          </p>
+          <UserSubscription  />
         </div>
       </div>
 

@@ -8,11 +8,13 @@ import GetInTouch from "@/components/get-in-touch";
 
 export default function LandingPage() {
   return (
-    <main className="  py-12 ">
-      <div className="px-4 lg:px-24 ">
+    <main className="  pb-12 ">
+  <div className="px-4 lg:px-24  my-6 py-6 ">
+
         <FirstSection />
-      </div>
-      <div className="px-4 lg:px-24 bg-sky-100 py-6 ">
+  </div>
+
+      <div className="px-4 lg:px-24 bg-sky-100 my-6 py-6 ">
         <SecondSection />
       </div>
       <div className="px-4 lg:px-24  ">

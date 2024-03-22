@@ -102,7 +102,7 @@ const ContactForm = (props: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Nome <span className="text-red-500">*</span>
+                      <span className="text-black">Nome</span> <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -124,7 +124,7 @@ const ContactForm = (props: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Email <span className="text-red-500">*</span>
+                    <span className="text-black">Email</span> <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -151,7 +151,9 @@ const ContactForm = (props: Props) => {
                 name="companyName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nome da Empresa</FormLabel>
+                    <FormLabel>
+                    <span className="text-black">Nome da Empresa</span>
+                      </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isPending}
@@ -171,7 +173,9 @@ const ContactForm = (props: Props) => {
                 name="companyWebsite"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Website da empresa</FormLabel>
+                    <FormLabel>
+                    <span className="text-black">Website da empresa</span>
+                      </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isPending}
@@ -195,7 +199,7 @@ const ContactForm = (props: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Número de Telefone <span className="text-red-500">*</span>
+                    <span className="text-black">Número de Telefone</span> <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -217,7 +221,7 @@ const ContactForm = (props: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      O Tipo de Serviço <span className="text-red-500">*</span>
+                    <span className="text-black">O Tipo de Serviço</span> <span className="text-red-500">*</span>
                     </FormLabel>
                     <Select onValueChange={field.onChange} disabled={isPending}>
                       <FormControl className="w-full">
@@ -254,7 +258,7 @@ const ContactForm = (props: Props) => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    Como podemos ajudar? <span className="text-red-500">*</span>
+                  <span className="text-black">Como podemos ajudar?</span> <span className="text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Textarea

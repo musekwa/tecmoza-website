@@ -24,7 +24,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="w-screen bg-white py-5 px-4 items-center justify-center absolute top-20 right-0 lg:hidden">
+    <div className="w-screen bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
       <Accordion className="pl-2 text-lg" type="single" collapsible>
         {menuItems.map((item) => {
           if (item.options.length > 0) {

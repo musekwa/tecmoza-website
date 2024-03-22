@@ -59,7 +59,7 @@ const SecondSection = (props: Props) => {
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
                 {scrollOn && (
-                  <CountUp   start={0} end={13} duration={4} delay={0} />
+                  <CountUp   start={0} end={13} duration={4} delay={1} />
                 )}
                 +
               </h2>
@@ -73,7 +73,7 @@ const SecondSection = (props: Props) => {
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
                 {scrollOn && (
-                  <CountUp  start={0} end={19} duration={4} delay={0} />
+                  <CountUp  start={0} end={19} duration={4} delay={2} />
                 )}
                 +
               </h2>
@@ -87,7 +87,7 @@ const SecondSection = (props: Props) => {
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center">
                 {scrollOn && (
-                  <CountUp  start={0} end={19} duration={4} delay={0} />
+                  <CountUp  start={0} end={19} duration={4} delay={3} />
                 )}
                 +
               </h2>

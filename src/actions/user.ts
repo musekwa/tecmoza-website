@@ -5,20 +5,21 @@ import db from "@/lib/db";
 import User from "@/models/user";
 import Message from "@/models/message";
 import { Schema } from "mongoose";
+import NewsSubscriber from "@/models/newsSubscriber";
 
 interface Props {
   name: string;
   email: string;
   phone: string;
-  isSubscribed: boolean;
+  isSubscribed?: boolean;
 }
 
 export const userAction = async (data: Props) => {
   const { name, email, phone, isSubscribed } = data;
-  let updatedUserData = {}
+  let updatedUserData = { name, email, phone, isSubscribed };
 
   // Avoid unsubscribing a already-subscribed user
-  if (isSubscribed){
+  if (isSubscribed) {
     updatedUserData = {
       ...updatedUserData,
       name,
@@ -26,8 +27,7 @@ export const userAction = async (data: Props) => {
       phone,
       isSubscribed: true,
     };
-  }
-  else {
+  } else {
     updatedUserData = {
       ...updatedUserData,
       name,
@@ -38,19 +38,24 @@ export const userAction = async (data: Props) => {
 
   try {
     // create a new user or update an existing user one without changing their previous subscription status
-    const existingUser = await User.findOneAndUpdate({ email }, updatedUserData, { new: true, upsert: true, });
-    if (existingUser) {
-      return existingUser._id;
+    const existingUser = await User.findOneAndUpdate(
+      { email },
+      updatedUserData,
+      { new: true, upsert: true }
+    );
+    // Add this user to the NewsSubscriber collection
+    if (isSubscribed) {
+      const newSubscriver = await NewsSubscriber.findOneAndUpdate(
+        { email },
+        { email, name },
+        {
+          new: true,
+          upsert: true,
+        }
+      );
     }
-    const newUser = new User({
-      name,
-      email,
-      phone,
-      isSubscribed,
-    });
 
-    const savedUser = await newUser.save();
-    return savedUser._id;
+    return existingUser._id;
   } catch (error) {
     return {
       error:

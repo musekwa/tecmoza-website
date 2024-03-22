@@ -17,7 +17,7 @@ const ThirdSection = (props: Props) => {
     <section className="py-12">
       <div className="flex flex-col">
         <h1 className="text-xl lg:text-3xl font-bold">
-          Contrate Um dos Melhores Programadores de Moçambique
+          Nossos Serviços
         </h1>
         <div className="w-[75px] h-1 bg-yellow-500 my-4" />
         <p className="text-sm lg:text-[16px] lg:tracking-wide ">
@@ -26,7 +26,7 @@ const ThirdSection = (props: Props) => {
         </p>
       </div>
       <div className="flex flex-col justify-center items-center md:flex-row  md:justify-between  gap-4 py-8">
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer hover:bg-sky-200 hover:scale-90 transition-all duration-300 p-2">
+        <div className="relative bg-white rounded-md w-[300px] h-[400px] p-2">
           <FaMobileScreen size={50} className="text-sky-900" />
           <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
             Aplicativos Móveis
@@ -36,17 +36,23 @@ const ThirdSection = (props: Props) => {
             </span>
           </h1>
 
-          <p className="text-justify text-sm leading-6 ">Nossos serviços de desenvolvimento de aplicativos móveis ajudam na digitalização do modelo de negócio da sua empresa, o que, por sua vez, reduz os custos de produção e aumenta a rentabilidade</p>
+          <p className="text-justify text-sm leading-6 ">Desenvolvemos aplicativos móveis robustos, mas fáceis de usuar, 
+          com interfaces de usuários cativantes, com base na tecnolgia moderna. <br />Os requisitos de negócio do nosso cliente determinam as funcionalidades que Desenvolvemos.</p>
         
           
-            <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md cursor-pointer ">
-              <Link href={"/"} className="">
+            <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
+              <Link href={"/services/mobile"} className="">
+              <div className="flex gap-2 text-xs items-center">
+              
+              Saiba mais 
                 <ArrowRight className="text-white w-6 h-6" />
+                
+              </div>
               </Link>
           </div>
         </div>
 
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer hover:bg-sky-200 hover:scale-90 transition-all duration-300 p-2">
+        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer p-2">
           <FaLaptop size={50} className="text-sky-900" />
           <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
           Aplicativos Web
@@ -57,17 +63,22 @@ const ThirdSection = (props: Props) => {
           </h1>
 
           <p className="text-justify text-sm leading-6 ">
-          Nossos aplicativos web são responsivos e incorporam animações elegantes. Projetamos uma arquitectura de informação que proporciona uma experiência de usuário excepcional, independentemente do dispositivo utilizado.
+          Ajudamos empresas e pessoas singulares a criarem uma presenca no mundo digital por meio de páginas web empoderadas com a inteligência artificial. 
           </p>
         
           
-            <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md cursor-pointer ">
-              <Link href={"/"} className="">
+          <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
+              <Link href={"/services/web"} className="">
+              <div className="flex gap-2 text-xs items-center">
+              
+              Saiba mais 
                 <ArrowRight className="text-white w-6 h-6" />
+                
+              </div>
               </Link>
           </div>
         </div>
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer hover:bg-sky-200 hover:scale-90 transition-all duration-300 p-2">
+        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer  p-2">
         <FaListCheck size={50} className="text-sky-900" />
           <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
             Consultoria Informática
@@ -77,12 +88,19 @@ const ThirdSection = (props: Props) => {
             </span>
           </h1>
 
-          <p className="text-justify text-sm leading-6 ">Nossa consultoria de informática oferece soluções especializadas para empresas. Combinamos expertise técnica com uma abordagem estratégica. Ajudamos a otimizar sistemas, implementar segurança cibernética e alinhar a TI aos objetivos de negócios.</p>
+          <p className="text-justify text-sm leading-6 ">Desenhamos e implementamos estratégias de transitão digital para as empresas,
+          prestando-lhes o nosso apoio, desde a fase de concepção até à entrega final do produto. 
+          </p>
         
           
-            <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md cursor-pointer ">
-              <Link href={"/"} className="">
+          <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
+              <Link href={"/services/consulting"} className="">
+              <div className="flex gap-2 text-xs items-center">
+              
+              Saiba mais 
                 <ArrowRight className="text-white w-6 h-6" />
+                
+              </div>
               </Link>
           </div>
         </div>

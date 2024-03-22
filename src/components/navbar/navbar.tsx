@@ -44,6 +44,28 @@ import ActionButtons from "./_components/action-buttons";
 
 export const menuItems: MenuItem[] = [
   {
+    title: "Página Inicial",
+    menu: "landing-page",
+    href: "/",
+    options: [
+      // {
+      //   label: "Desenvolvimento de Aplicativos Móveis",
+      //   icon: <FaMobileScreen size={30} className="text-sky-900" />,
+      //   href: "/team-alignment",
+      // },
+      // {
+      //   label: "Desenvolvimento de Aplicativos Web",
+      //   icon: <FaLaptop size={30} className="text-sky-900" />,
+      //   href: "/sales",
+      // },
+      // {
+      //   label: "Consultoria Informática",
+      //   icon: <FaListCheck size={30} className="text-sky-900" />,
+      //   href: "/engineering",
+      // },
+    ],
+  },
+  {
     title: "Serviços",
     menu: "services",
     href: "/services",
@@ -66,140 +88,140 @@ export const menuItems: MenuItem[] = [
     ],
   },
 
-  {
-    title: "Tecnologia",
-    menu: "technology",
-    href: "/technology",
-    options: [
-      {
-        label: "iOS",
-        icon: (
-          <Image src={"/images/iosLogo.png"} alt="ios" width={30} height={30} />
-        ),
-        href: "/bird-ai",
-      },
-      {
-        label: "Android",
-        icon: (
-          <Image
-            src={"/images/androidLogo.png"}
-            alt="android"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/enterprise",
-      },
-      {
-        label: "React Native",
-        icon: (
-          <Image
-            src={"/images/reactNativeLogo.png"}
-            alt="react native"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "Flutter",
-        icon: (
-          <Image
-            src={"/images/flutterLogo.png"}
-            alt="flutter"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "ReactJS",
-        icon: (
-          <Image
-            src={"/images/reactNativeLogo.png"}
-            alt="reactjs"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "NextJS",
-        icon: (
-          <Image
-            src={"/images/nextJsLogo.png"}
-            alt="nextjs"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "MongoDB",
-        icon: (
-          <Image
-            src={"/images/mongoDbLogo.png"}
-            alt="mongodb"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "PostgreSQL",
-        icon: (
-          <Image
-            src={"/images/postgreSqlLogo.jpg"}
-            alt="postgresql"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "Convex",
-        icon: (
-          <Image
-            src={"/images/convexLogo.png"}
-            alt="convex"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "TypeScript",
-        icon: (
-          <Image
-            src={"/images/typescriptLogo.png"}
-            alt="typescript"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-      {
-        label: "NodeJS",
-        icon: (
-          <Image
-            src={"/images/nodeJsLogo.png"}
-            alt="nodejs"
-            width={30}
-            height={30}
-          />
-        ),
-        href: "/",
-      },
-    ],
-  },
+  // {
+  //   title: "Tecnologia",
+  //   menu: "technology",
+  //   href: "/technology",
+  //   options: [
+  //     {
+  //       label: "iOS",
+  //       icon: (
+  //         <Image src={"/images/iosLogo.png"} alt="ios" width={30} height={30} />
+  //       ),
+  //       href: "/bird-ai",
+  //     },
+  //     {
+  //       label: "Android",
+  //       icon: (
+  //         <Image
+  //           src={"/images/androidLogo.png"}
+  //           alt="android"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/enterprise",
+  //     },
+  //     {
+  //       label: "React Native",
+  //       icon: (
+  //         <Image
+  //           src={"/images/reactNativeLogo.png"}
+  //           alt="react native"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "Flutter",
+  //       icon: (
+  //         <Image
+  //           src={"/images/flutterLogo.png"}
+  //           alt="flutter"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "ReactJS",
+  //       icon: (
+  //         <Image
+  //           src={"/images/reactNativeLogo.png"}
+  //           alt="reactjs"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "NextJS",
+  //       icon: (
+  //         <Image
+  //           src={"/images/nextJsLogo.png"}
+  //           alt="nextjs"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "MongoDB",
+  //       icon: (
+  //         <Image
+  //           src={"/images/mongoDbLogo.png"}
+  //           alt="mongodb"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "PostgreSQL",
+  //       icon: (
+  //         <Image
+  //           src={"/images/postgreSqlLogo.jpg"}
+  //           alt="postgresql"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "Convex",
+  //       icon: (
+  //         <Image
+  //           src={"/images/convexLogo.png"}
+  //           alt="convex"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "TypeScript",
+  //       icon: (
+  //         <Image
+  //           src={"/images/typescriptLogo.png"}
+  //           alt="typescript"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "NodeJS",
+  //       icon: (
+  //         <Image
+  //           src={"/images/nodeJsLogo.png"}
+  //           alt="nodejs"
+  //           width={30}
+  //           height={30}
+  //         />
+  //       ),
+  //       href: "/",
+  //     },
+  //   ],
+  // },
   {
     title: "Portfolio",
     menu: "portfolio",
