@@ -41,7 +41,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                         onClick={handleLinkClick}
                       >
                         <div className="flex py-2 gap-6 pl-8 cursor-pointer hover:bg-gray-200 rounded-md">
-                          <div>{option.emoji}</div>
+                          <div>{option.icon}</div>
                           <div>{option.label}</div>
                         </div>
                       </Link>
