@@ -7,7 +7,7 @@ import {
   User2Icon,
   Users2,
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 
@@ -15,13 +15,21 @@ type Props = {};
 
 const SecondSection = (props: Props) => {
   const [scrollOn, setScrollOn] = useState(false);
+  const [scrollTrigger, setScrollTrigger] = useState<ScrollTrigger | null>(null);
 
+  const handleEnter = useCallback(() => setScrollOn(true), []);
+  const handleExit = useCallback(() => setScrollOn(false), []);
+
+  useEffect(() => {
+    const newScrollTrigger = new ScrollTrigger({
+      onEnter: handleEnter,
+      onExit: handleExit,
+    });
+
+  }, [handleEnter, handleExit]);
   return (
     <section className="">
-      <ScrollTrigger
-        onEnter={() => setScrollOn(true)}
-        onExit={() => setScrollOn(false)}
-      >
+
         <div className="flex flex-col">
           <h1 className="text-xl lg:text-3xl font-bold">Reconhecimentos</h1>
           <div className="w-[75px] h-1 bg-yellow-500 my-4" />
@@ -37,7 +45,7 @@ const SecondSection = (props: Props) => {
             <CalendarDays className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900 " />
             <div className="flex flex-col justify-center items-center w-1/2 ">
               <h2 className="text-xl lg:text-3xl font-bold text-center">
-                {scrollOn && (
+                {/* {scrollOn && (
                   <CountUp
                     
                     // scrollSpyDelay={2}
@@ -46,8 +54,8 @@ const SecondSection = (props: Props) => {
                     duration={4}
                     delay={0}
                   />
-                )}
-                +
+                )} */}
+                13+
               </h2>
               <p className="text-sm lg:text-[16px] font-semibold text-sky-500 tracking-tighter text-center">
                 Anos de <br /> Experiência
@@ -58,10 +66,10 @@ const SecondSection = (props: Props) => {
             <Handshake className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
-                {scrollOn && (
-                  <CountUp   start={0} end={13} duration={4} delay={1} />
-                )}
-                +
+                {/* {scrollOn && (
+                  <CountUp   start={13} end={13} duration={4} delay={1} />
+                )} */}
+                13+
               </h2>
               <p className="text-sm lg:text-[16px]  font-semibold text-sky-500 tracking-tighter text-center">
                 Força da <br /> Equipe
@@ -72,10 +80,10 @@ const SecondSection = (props: Props) => {
             <TabletSmartphone className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
-                {scrollOn && (
-                  <CountUp  start={0} end={19} duration={4} delay={2} />
-                )}
-                +
+                {/* {scrollOn && (
+                  <CountUp  start={19} end={19} duration={4} delay={2} />
+                )} */}
+                19+
               </h2>
               <p className="text-sm lg:text-[16px]  font-semibold text-sky-500 tracking-tighter text-center">
                 Produtos <br /> Desenvolvidos
@@ -86,10 +94,10 @@ const SecondSection = (props: Props) => {
             <Smile className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center">
-                {scrollOn && (
-                  <CountUp  start={0} end={19} duration={4} delay={3} />
-                )}
-                +
+                {/* {scrollOn && (
+                  <CountUp  start={19} end={19} duration={4} delay={3} />
+                )} */}
+                19+
               </h2>
               <p className="text-sm lg:text-[16px]  font-semibold text-sky-500 tracking-tighter text-center">
                 Clientes <br /> Satisfeitos
@@ -97,7 +105,7 @@ const SecondSection = (props: Props) => {
             </div>
           </div>
         </div>
-      </ScrollTrigger>
+
     </section>
   );
 };
