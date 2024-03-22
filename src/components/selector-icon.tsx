@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-export const SelectorIcon = (props) => (
+export const SelectorIcon = (props: any) => (
     <svg
       aria-hidden="true"
       fill="none"
