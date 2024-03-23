@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import Link from "next/link";
@@ -9,107 +9,102 @@ import {
   FaListCheck,
   FaMobileScreen,
   FaPhone,
+  FaTeamspeak,
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useInView} from "react-intersection-observer";
+
+const services = [
+  {
+    serviceName: "Desenvolvimento - Android e iOS",
+    icon: <FaMobileScreen size={30}  />,
+    href: "/services/mobile",
+    descriprion:
+      "Desenvolvemos aplicativos móveis robustos, cativantes, fáceis de usuar, com base na tecnolgia moderna. Os requisitos de negócio do nosso cliente determinam a escolha de tipos de tecnologia que usamos.",
+  },
+  {
+    serviceName: "Desenvolvimento - Web e Windows",
+    icon: <FaLaptop size={30}  />,
+    href: "/services/web",
+    descriprion:
+      "Ajudamos empresas e pessoas singulares a criarem uma presença no mundo digital por meio de páginas web interactivas, empoderadas com a inteligência artificial e a tecnolgia web moderna.",
+  },
+  {
+    serviceName: "Consultoria - Informatização",
+    icon: <FaListCheck size={30} />,
+    href: "/services/consulting",
+    descriprion:
+      "Desenhamos e implementamos estratégias de transição digital e informatização de modelos de negócio para as empresas, prestando-lhes o nosso apoio antes, durante e depois da implementação.",
+  },
+  
+  {
+    serviceName: "Treinamento - Mentoria",
+    icon: <FaTeamspeak size={30} />,
+    href: "/services/consulting",
+    descriprion:
+      "Ajudamos empresas e pessoas singulares a aumentarem a sua literacia digital por meio de mentoria e treinamento acelerados e orientados a suas necessidades.",
+  },
+];
 
 type Props = {};
 
 const ThirdSection = (props: Props) => {
+  const {ref, inView, entry} = useInView({threshold: 0, triggerOnce: false});
+
   return (
     <section className="py-12">
       <div className="flex flex-col">
-        <h1 className="text-xl lg:text-3xl font-bold">
-          Nossos Serviços
-        </h1>
+        <h1 className="text-xl lg:text-3xl font-bold">Nossos Serviços</h1>
         <div className="w-[75px] h-1 bg-yellow-500 my-4" />
         <p className="text-sm lg:text-[16px] lg:tracking-wide ">
           A nossa equipa possui experiência em cumprir os objectivos pretendidos
           e moldar as ideias de acordo com a demanda do mercado.
         </p>
       </div>
-      <motion.div 
-            
-      className="flex flex-col justify-center items-center md:flex-row  md:justify-between  gap-4 py-8">
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] p-2">
-          <FaMobileScreen size={50} className="text-sky-900" />
-          <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
-            Aplicativos Móveis
-            <br />
-            <span className="text-sm italic text-black font-normal">
-              Desenvolvimento
-            </span>
-          </h1>
+    
 
-          <p className="text-justify text-sm leading-6 ">Desenvolvemos aplicativos móveis robustos, mas fáceis de usuar, 
-          com interfaces de usuários cativantes, com base na tecnolgia moderna. <br />Os requisitos de negócio do nosso cliente determinam as funcionalidades que Desenvolvemos.</p>
-        
-          
+
+      <div ref={ref} className=" flex flex-col sm:grid sm:grid-cols-2  xl:grid-cols-4 justify-center items-center justify-items-center gap-8 py-8 ">
+        {services.map((service, index) => (
+          <motion.div 
+          key={index}
+          initial={{opacity: 0, y: 50}}
+          animate={{opacity: inView ? 1 : 0,  y: inView ?  0 : 50}}
+          transition={{duration: 1.5, delay: 0.5 + index * 0.5}}
+          // 
+
+          className="relative bg-white rounded-md w-[300px] h-[400px] p-2">
+            <div className="border-2 bg-sky-500 p-4 w-fit rounded-full text-white">
+            {service.icon}
+            </div>
+            <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
+              {service.serviceName.slice(
+                service.serviceName.split(" ")[0].length
+              )}
+              <br />
+              <span className="text-sm italic text-black font-normal">
+                {service.serviceName.split(" ")[0]}
+              </span>
+            </h1>
+
+            <p className="text-justify text-sm leading-6 ">
+              {service.descriprion}
+            </p>
+
             <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
               <Link href={"/services/mobile"} className="">
-              <div className="flex gap-2 text-xs items-center">
-              
-              Saiba mais 
-                <ArrowRight className="text-white w-6 h-6" />
-                
-              </div>
+                <div className="flex gap-2 text-xs items-center">
+                  Saiba mais
+                  <ArrowRight className="text-white w-6 h-6" />
+                </div>
               </Link>
-          </div>
-        </div>
+            </div>
+          </motion.div>
+        ))}
 
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer p-2">
-          <FaLaptop size={50} className="text-sky-900" />
-          <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
-          Aplicativos Web
-            <br />
-            <span className="text-sm italic text-black font-normal">
-              Desenvolvimento
-            </span>
-          </h1>
-
-          <p className="text-justify text-sm leading-6 ">
-          Ajudamos empresas e pessoas singulares a criarem uma presenca no mundo digital por meio de páginas web empoderadas com a inteligência artificial. 
-          </p>
-        
-          
-          <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
-              <Link href={"/services/web"} className="">
-              <div className="flex gap-2 text-xs items-center">
-              
-              Saiba mais 
-                <ArrowRight className="text-white w-6 h-6" />
-                
-              </div>
-              </Link>
-          </div>
-        </div>
-        <div className="relative bg-white rounded-md w-[300px] h-[400px] cursor-pointer  p-2">
-        <FaListCheck size={50} className="text-sky-900" />
-          <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
-            Consultoria Informática
-            <br />
-            <span className="text-sm italic text-black font-normal">
-              Consultoria
-            </span>
-          </h1>
-
-          <p className="text-justify text-sm leading-6 ">Desenhamos e implementamos estratégias de transitão digital para as empresas,
-          prestando-lhes o nosso apoio, desde a fase de concepção até à entrega final do produto. 
-          </p>
-        
-          
-          <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
-              <Link href={"/services/consulting"} className="">
-              <div className="flex gap-2 text-xs items-center">
-              
-              Saiba mais 
-                <ArrowRight className="text-white w-6 h-6" />
-                
-              </div>
-              </Link>
-          </div>
-        </div>
-
-      </motion.div>
+       
+      </div>
+      
     </section>
   );
 };

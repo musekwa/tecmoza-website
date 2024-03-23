@@ -10,6 +10,9 @@ import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
 import SecondSection from "./second-section";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 
 const settings = {
   dots: false,
@@ -49,49 +52,22 @@ const settings = {
 
 const slickItems = [
   {
-    title: "Realizamos Consultoria Informática",
-    video: "/videos/consulting.mp4",
-  },
-  {
-    title: "Desenvolvemos Aplicativos Móveis - Android e iOS",
+    title: "Desenvolvemos Aplicativos Móveis para Android e iOS",
     video: "/videos/mobile-dev.mp4",
   },
   {
     title: "Desenvolvemos Aplicativos Web",
     video: "/videos/web-dev.mp4",
   },
-  // {
-  //   title: "Flutter",
-  //   image: "/images/flutterLogo.png",
-  // },
-  // {
-  //   title: "ReactJS",
-  //   image: "/images/reactNativeLogo.png",
-  // },
-  // {
-  //   title: "NextJS",
-  //   image: "/images/nextJsLogo.png",
-  // },
-  // {
-  //   title: "TypeScript",
-  //   image: "/images/typescriptLogo.png",
-  // },
-  // {
-  //   title: "NodeJs",
-  //   image: "/images/nodeJsLogo.png",
-  // },
-  // {
-  //   title: "TypeScript",
-  //   image: "/images/mongoDbLogo.png",
-  // },
-  // {
-  //   title: "TypeScript",
-  //   image: "/images/postgreSqlLogo.jpg",
-  // },
-  // {
-  //   title: "TypeScript",
-  //   image: "/images/convexLogo.png",
-  // },
+  
+  {
+    title: "Realizamos Consultoria Informática",
+    video: "/videos/consulting.mp4",
+  },
+  {
+    title: "Realizamos Mentoria e Treinamento Digitais",
+    video: "/videos/mentoring.mp4",
+  },
 ];
 
 const marqueeImages = [
@@ -112,91 +88,32 @@ const marqueeImages = [
 type Props = {};
 
 const FirstSection = (props: Props) => {
-  // let sliderRef = useRef(null);
+  const {ref, inView, entry} = useInView({threshold: 0.5, triggerOnce: false});
+
+
+ 
   return (
     <section>
       <div  className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-      <div className="w-full flex flex-col justify-center items-center  ">
-        {/* <p className="text-[16px] text-sky-500 mb-6">
-          A sua Estratégia de Mobilidade Digital.
-        </p> */}
-
+      <motion.div
+      ref={ref}
+      initial={{ x: -100}}
+      animate={{ x: inView ? 0 : -100}}
+      transition={{duration: 2.5, delay: 0}}
+      className="w-full flex flex-col justify-center items-center   ">
         <div className="w-[200px] h-1 bg-yellow-500 my-2" />
         <h1
           className={cn(
             "text-3xl lg:text-5xl font-bold text-sky-900 text-center"
-            // raleway.className
+           
           )}
         >
           Programadores Altamente Qualificados{" "}
           <span className="text-lg lg:text-xl font-normal">estão aqui!</span>
         </h1>
         <div className="py-6">
-          {/* <ul className="flex flex-col  gap-2 text-[18px] text-justify">
-            <li className="">
-              <div className="flex gap-2 items-center">
-                <ArrowRight className="w-4 h-4 text-sky-500" />
-                <p>
-                  Precisa de{" "}
-                  <span className="font-bold text-sky-500 it">
-                    informatizar
-                  </span>{" "}
-                  o modelo de seu{" "}
-                  <span className="font-bold text-sky-500 it">negócio</span>?
-                </p>
-              </div>
-            </li>
-            <li className="">
-              <div className="flex gap-2 items-center">
-                <ArrowRight className="w-4 h-4 text-sky-500" />
-                <p>
-                  Pensa em criar uma{" "}
-                  <span className="font-bold text-sky-500 it">
-                    presença online
-                  </span>{" "}
-                  para a sua empresa?
-                </p>
-              </div>
-            </li>
-
-            <li className="">
-              <div className="flex gap-2 items-center">
-                <ArrowRight className="w-4 h-4 text-sky-500" />
-                <p>
-                  Precisa de um{" "}
-                  <span className="font-bold text-sky-500 it">programador</span>{" "}
-                  para um projecto de Tecnologia de Informação?
-                </p>
-              </div>
-            </li>
-
-            <li className="gap-2">
-              <div className="flex gap-2 items-center">
-                <ArrowRight className="w-4 h-4 text-sky-500" />
-                <p>
-                  Precisa de uma{" "}
-                  <span className="font-bold text-sky-500 it">
-                    consultoria informática
-                  </span>{" "}
-                  para o seu negócio?
-                </p>
-              </div>
-            </li>
-
-            <li className="">
-              <div className="flex gap-2 items-center">
-                <ArrowRight className="w-4 h-4 text-sky-500" />
-                <p>
-                  Precisa de um{" "}
-                  <span className="font-bold text-sky-500 it">
-                    mentor, tutor ou consultor
-                  </span>{" "}
-                  para orientar-lhe num projecto informático?
-                </p>
-              </div>
-            </li>
-          </ul> */}
+          
           <p className="text-[20px] font-semibold text-center">
             Tem algum projecto informático em mente?
           </p>
@@ -214,8 +131,8 @@ const FirstSection = (props: Props) => {
         </Button>
         </Link>
         <div className="w-[200px] h-1 bg-yellow-500 my-2" />
+      </motion.div>
 
-      </div>
      
         <Slider
           // ref={(slider) => (sliderRef = slider)}
@@ -233,8 +150,8 @@ const FirstSection = (props: Props) => {
               >
                 <source src={item.video} type="video/mp4" />
               </video>
-              <div className="absolute top-10 left-10 z-40 ">
-              <p className="text-2xl lg:text-4xl font-semibold italic text-gray-200 py-6 px-12">{item.title}</p>
+              <div className="absolute top-10 left-4 z-40 ">
+              <p className="text-2xl lg:text-4xl font-bold italic text-sky-900 py-6 px-12">{item.title}</p>
 
               </div>
 
