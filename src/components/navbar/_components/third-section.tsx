@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import Link from "next/link";
@@ -9,6 +10,7 @@ import {
   FaMobileScreen,
   FaPhone,
 } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -25,7 +27,9 @@ const ThirdSection = (props: Props) => {
           e moldar as ideias de acordo com a demanda do mercado.
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center md:flex-row  md:justify-between  gap-4 py-8">
+      <motion.div 
+            
+      className="flex flex-col justify-center items-center md:flex-row  md:justify-between  gap-4 py-8">
         <div className="relative bg-white rounded-md w-[300px] h-[400px] p-2">
           <FaMobileScreen size={50} className="text-sky-900" />
           <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
@@ -105,7 +109,7 @@ const ThirdSection = (props: Props) => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };
