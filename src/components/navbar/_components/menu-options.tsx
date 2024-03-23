@@ -7,13 +7,20 @@ import clsx from "clsx";
 import { menuItems } from "../navbar";
 import Link from "next/link";
 
+type NavigationMenuBarProps = {
+  setMenuOptions: (menu: MenuOptionsProps | null) => void;
+
+}
+
 export const NavigationMenuBar = (
   {
     setMenuOptions,
-  }: { setMenuOptions: (menu: MenuOptionsProps | null) => void },
-  menuOptions: MenuOptionsProps
+  }: NavigationMenuBarProps
 ) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+
+
+
   const renderMenu = (item: MenuItem) => {
     const { title, menu, options, href } = item;
     const handleMouseEnter = (menu: string) => {
@@ -25,11 +32,13 @@ export const NavigationMenuBar = (
         active: true,
       });
     };
+
+
     const handleMouseLeave = () => {
       setActiveMenu(null);
       // setMenuOptions(null);
     };
-
+    
     return (
       <div
         className="flex items-center relative "
@@ -37,7 +46,7 @@ export const NavigationMenuBar = (
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-center">
-          <div >
+          <div  >
             <Link href={href}>
               <div className="flex items-center hover:border-b-2 hover:border-sky-500 h-12">
                 <div className="w-max mx-1 ">{title}</div>

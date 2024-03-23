@@ -5,8 +5,16 @@ import { X, AlignJustify } from "lucide-react";
 import Link from "next/link";
 import DropdownMenu from "./dropdown-menu";
 
-const ActionButtons = () => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+type ActionButtonsProps = {
+  dropdownVisible: boolean;
+  setDropdownVisible: (dropdownVisible: boolean)=>void;
+};
+
+const ActionButtons = ({
+  dropdownVisible,
+  setDropdownVisible,
+}: ActionButtonsProps) => {
+ 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };

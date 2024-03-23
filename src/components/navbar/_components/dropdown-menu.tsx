@@ -24,7 +24,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="w-screen bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
+    <div className="max-w-2/3 min-w-1/2 bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
       <Accordion className="pl-2 text-lg" type="single" collapsible>
         {menuItems.map((item) => {
           if (item.options.length > 0) {
@@ -54,7 +54,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
             return (
               <Link
               key={item.title}
-              href={"/"}
+              href={item.href}
               className="
                 flex
                 flex-1
@@ -83,7 +83,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
       </Accordion>
       <div className="lg:pt-32">
         <div className="flex items-center justify-center space-x-4">
-          <Link href={"/contact"}>
+          <Link href={"/contact-us"}>
             <Button
               className="
               text-white
@@ -100,7 +100,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
               hover:shadow-sky-900
         "
             >
-              Contactar-Nos
+              Contacte-Nos
             </Button>
           </Link>
         </div>

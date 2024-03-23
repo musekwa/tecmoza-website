@@ -37,7 +37,7 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import Image from "next/image";
-import { FaLaptop, FaListCheck, FaMobileScreen } from "react-icons/fa6";
+import { FaLaptop, FaListCheck, FaMobileScreen, FaTeamspeak } from "react-icons/fa6";
 import { MenuItem, MenuOptionsProps } from "./types";
 import { NavigationMenuBar } from "./_components/menu-options";
 import ActionButtons from "./_components/action-buttons";
@@ -72,156 +72,26 @@ export const menuItems: MenuItem[] = [
     options: [
       {
         label: "Desenvolvimento de Aplicativos Móveis",
-        icon: <FaMobileScreen size={30} className="text-sky-900" />,
-        href: "/team-alignment",
+        icon: <FaMobileScreen size={25} className="text-sky-500" />,
+        href: "/mobile",
       },
       {
         label: "Desenvolvimento de Aplicativos Web",
-        icon: <FaLaptop size={30} className="text-sky-900" />,
-        href: "/sales",
+        icon: <FaLaptop size={25} className="text-sky-500" />,
+        href: "/web",
       },
       {
         label: "Consultoria Informática",
-        icon: <FaListCheck size={30} className="text-sky-900" />,
-        href: "/engineering",
+        icon: <FaListCheck size={25} className="text-sky-500" />,
+        href: "/consulting",
+      },
+      {
+        label: "Mentoria e Treinamento Digitais",
+        icon: <FaTeamspeak size={25} className="text-sky-500" />,
+        href: "/mentoring",
       },
     ],
   },
-
-  // {
-  //   title: "Tecnologia",
-  //   menu: "technology",
-  //   href: "/technology",
-  //   options: [
-  //     {
-  //       label: "iOS",
-  //       icon: (
-  //         <Image src={"/images/iosLogo.png"} alt="ios" width={30} height={30} />
-  //       ),
-  //       href: "/bird-ai",
-  //     },
-  //     {
-  //       label: "Android",
-  //       icon: (
-  //         <Image
-  //           src={"/images/androidLogo.png"}
-  //           alt="android"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/enterprise",
-  //     },
-  //     {
-  //       label: "React Native",
-  //       icon: (
-  //         <Image
-  //           src={"/images/reactNativeLogo.png"}
-  //           alt="react native"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "Flutter",
-  //       icon: (
-  //         <Image
-  //           src={"/images/flutterLogo.png"}
-  //           alt="flutter"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "ReactJS",
-  //       icon: (
-  //         <Image
-  //           src={"/images/reactNativeLogo.png"}
-  //           alt="reactjs"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "NextJS",
-  //       icon: (
-  //         <Image
-  //           src={"/images/nextJsLogo.png"}
-  //           alt="nextjs"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "MongoDB",
-  //       icon: (
-  //         <Image
-  //           src={"/images/mongoDbLogo.png"}
-  //           alt="mongodb"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "PostgreSQL",
-  //       icon: (
-  //         <Image
-  //           src={"/images/postgreSqlLogo.jpg"}
-  //           alt="postgresql"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "Convex",
-  //       icon: (
-  //         <Image
-  //           src={"/images/convexLogo.png"}
-  //           alt="convex"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "TypeScript",
-  //       icon: (
-  //         <Image
-  //           src={"/images/typescriptLogo.png"}
-  //           alt="typescript"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //     {
-  //       label: "NodeJS",
-  //       icon: (
-  //         <Image
-  //           src={"/images/nodeJsLogo.png"}
-  //           alt="nodejs"
-  //           width={30}
-  //           height={30}
-  //         />
-  //       ),
-  //       href: "/",
-  //     },
-  //   ],
-  // },
   {
     title: "Portfolio",
     menu: "portfolio",
@@ -252,6 +122,7 @@ type Props = {};
 const Navbar = (props: Props) => {
   // const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOptions, setMenuOptions] = useState<MenuOptionsProps | null>(null);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleMouseEnter = (menuOptions: MenuOptionsProps) => {
     // setActiveMenu(menu);
@@ -290,10 +161,10 @@ const Navbar = (props: Props) => {
             <Logo />
           </Link>
         </div>
-        <div className="flex">
-          <NavigationMenuBar setMenuOptions={setMenuOptions} />
+        <div className="flex" onClick={() => setDropdownVisible(!dropdownVisible)}>
+          <NavigationMenuBar setMenuOptions={setMenuOptions}  />
           <div onMouseEnter={handleMouseLeave} className="flex items-center">
-            <ActionButtons />
+            <ActionButtons dropdownVisible={dropdownVisible} setDropdownVisible={setDropdownVisible} />
           </div>
         </div>
       </div>
@@ -326,7 +197,7 @@ const Navbar = (props: Props) => {
                 <Link
                   href={option.href}
                   key={index}
-                  className="min-w-[100px] flex"
+                  className="min-w-[100px]"
                 >
                   <div className="cursor-pointer hover:bg-gray-100 p-2 rounded-md">
                     <div className="flex gap-4 justify-center items-center">

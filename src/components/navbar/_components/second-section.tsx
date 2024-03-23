@@ -38,7 +38,7 @@ const SecondSection = (props: Props) => {
             Prestamos serviços de qualidade com professionalismo.
           </p>
         </div>
-        <div ref={ref} className="grid grid-cols-2 xl:grid-cols-4 text-center items-center justify-between gap-4 lg:gap-10 py-6">
+        <div ref={ref} className="grid grid-cols-2 xl:grid-cols-4 text-center items-center justify-items-center justify-between gap-4 lg:gap-10 py-6">
           <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1 bg-white flex flex-row justify-evenly items-center rounded-md gap-2">
             <CalendarDays className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900 " />
             <div className="flex flex-col justify-center items-center w-1/2 ">

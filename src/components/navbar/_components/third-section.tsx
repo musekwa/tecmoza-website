@@ -38,7 +38,7 @@ const services = [
   },
   
   {
-    serviceName: "Treinamento - Mentoria",
+    serviceName: "Treinamento - Mentoria Digital",
     icon: <FaTeamspeak size={30} />,
     href: "/services/consulting",
     descriprion:
