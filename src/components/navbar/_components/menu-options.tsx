@@ -9,17 +9,16 @@ import Link from "next/link";
 
 type NavigationMenuBarProps = {
   setMenuOptions: (menu: MenuOptionsProps | null) => void;
+  dropdownVisible: boolean;
+  setDropdownVisible: (visible: boolean) => void;
+};
 
-}
-
-export const NavigationMenuBar = (
-  {
-    setMenuOptions,
-  }: NavigationMenuBarProps
-) => {
+export const NavigationMenuBar = ({
+  setMenuOptions,
+  dropdownVisible,
+  setDropdownVisible,
+}: NavigationMenuBarProps) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-
-
 
   const renderMenu = (item: MenuItem) => {
     const { title, menu, options, href } = item;
@@ -33,12 +32,11 @@ export const NavigationMenuBar = (
       });
     };
 
-
     const handleMouseLeave = () => {
       setActiveMenu(null);
       // setMenuOptions(null);
     };
-    
+
     return (
       <div
         className="flex items-center relative "
@@ -46,10 +44,14 @@ export const NavigationMenuBar = (
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-center">
-          <div  >
+          <div>
             <Link href={href}>
               <div className="flex items-center hover:border-b-2 hover:border-sky-500 h-12">
-                <div className="w-max mx-1 ">{title}</div>
+                <div
+                  className="w-max mx-1 "
+                >
+                  {title}
+                </div>
                 {options.length > 0 && (
                   <motion.div
                     variants={

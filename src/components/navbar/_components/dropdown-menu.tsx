@@ -1,9 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import {
   Accordion,
@@ -29,8 +27,14 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
         {menuItems.map((item) => {
           if (item.options.length > 0) {
             return (
-              <AccordionItem key={item.title} className="my-6 border-b hover:bg-gray-100 rounded-md" value={item.menu}>
-                <AccordionTrigger className="px-2">{item.title}</AccordionTrigger>
+              <AccordionItem
+                key={item.title}
+                className="my-6 border-b hover:bg-gray-100 rounded-md"
+                value={item.menu}
+              >
+                <AccordionTrigger className="px-2">
+                  {item.title}
+                </AccordionTrigger>
                 <AccordionContent>
                   {item.options.map((option) => {
                     return (
@@ -53,9 +57,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
           } else {
             return (
               <Link
-              key={item.title}
-              href={item.href}
-              className="
+                onClick={handleLinkClick}
+                key={item.title}
+                href={item.href}
+                className="
                 flex
                 flex-1
                 items-center 
@@ -70,16 +75,15 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 hover:underline
                 rounded-md
                 "
-            >
-              {item.title}
-              <div>
-                <ArrowRight className="h-3.5 w-5 " />
-              </div>
-            </Link>
+              >
+                {item.title}
+                <div>
+                  <ArrowRight className="h-3.5 w-5 " />
+                </div>
+              </Link>
             );
           }
         })}
-       
       </Accordion>
       <div className="lg:pt-32">
         <div className="flex items-center justify-center space-x-4">

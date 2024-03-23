@@ -159,11 +159,12 @@ const Navbar = (props: Props) => {
         >
           <Link href={"/"}>
             <Logo />
+
           </Link>
         </div>
-        <div className="flex" onClick={() => setDropdownVisible(!dropdownVisible)}>
-          <NavigationMenuBar setMenuOptions={setMenuOptions}  />
-          <div onMouseEnter={handleMouseLeave} className="flex items-center">
+        <div className="flex">
+          <NavigationMenuBar setMenuOptions={setMenuOptions} dropdownVisible={dropdownVisible} setDropdownVisible={setDropdownVisible}  />
+          <div onMouseEnter={handleMouseLeave} className="flex items-center" >
             <ActionButtons dropdownVisible={dropdownVisible} setDropdownVisible={setDropdownVisible} />
           </div>
         </div>
