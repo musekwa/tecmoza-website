@@ -70,8 +70,8 @@ const serviceImage = [
     serviceHref: "/services/web",
     imageBlockAnimation: { x: 200 },
     descriptionBlockAnimation: { x: -40 },
-    title: "Mentoria Digital",
-    subtitle: "Treinamento",
+    title: "Treinamento Digital",
+    subtitle: "Treinamento e Mentoria",
     bgColor: "",
     blocksOrder: "reverse",
     description:

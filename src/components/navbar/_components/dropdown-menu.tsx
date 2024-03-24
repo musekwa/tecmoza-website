@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -10,6 +11,7 @@ import {
   AccordionItem,
 } from "@/components/ui/accordion";
 
+
 import { menuItems } from "../navbar";
 
 interface DropdownMenuProps {
@@ -17,13 +19,14 @@ interface DropdownMenuProps {
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
+const [accordionValue, setAccordionValue] = useState<string | undefined >();
   const handleLinkClick = () => {
     onClose();
   };
 
   return (
     <div className="max-w-2/3 min-w-1/2 bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
-      <Accordion className="pl-2 text-lg" type="single" collapsible>
+      <Accordion className="pl-2 text-lg" type="single" collapsible value={accordionValue} onValueChange={setAccordionValue} >
         {menuItems.map((item) => {
           if (item.options.length > 0) {
             return (
@@ -31,9 +34,40 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 key={item.title}
                 className="my-6 border-b hover:bg-gray-100 rounded-md"
                 value={item.menu}
+                
+                
+
               >
-                <AccordionTrigger className="px-2">
-                  {item.title}
+                <AccordionTrigger className="px-2" >
+                  <Link
+                    onClick={()=>{
+                      if (item.menu === accordionValue) {
+                        setAccordionValue(undefined);
+                        handleLinkClick()
+                      } else {
+                        setAccordionValue(item.menu);
+                      }
+                    }}
+                 
+                    href={item.href}
+                    className="
+                      flex
+                      flex-1
+                      items-center 
+                      justify-between
+                      font-medium
+                      py-4
+                      px-2
+                      my-6
+                      border-b
+                      cursor-pointer
+                      hover:bg-gray-100
+                      hover:underline
+                      rounded-md
+                      "
+                  >
+                    {item.title}
+                  </Link>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.options.map((option) => {
