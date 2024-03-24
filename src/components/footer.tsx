@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Logo from "./logo";
 import {
@@ -85,12 +85,7 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <div className="flex justify-end">
-        <div className="flex gap-4 items-center">
-          <p className="text-[12px]">
-            Subscreva à nossa e-newsLetter e <br />receba periodicamente atualizações da TECMOZA!
-          </p>
-          <UserSubscription  />
-        </div>
+        <UserSubscription />
       </div>
 
       <div className="h-0.5 w-full bg-gray-200 mt-4 mb-2" />

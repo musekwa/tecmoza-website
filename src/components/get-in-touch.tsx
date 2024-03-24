@@ -15,7 +15,7 @@ const GetInTouch = (props: Props) => {
         <div className="text-center">
         <h4 className="text-sky-900 font-semibold italic animate-pulse">Nós Podemos Ajudar!</h4>
           <p className="text-[14px] lg:text-[18px] lg:tracking-wider lg:leading-normal">
-            Pagará menos por uma solução digital de alta qualidade.
+            TECMOZA irá prestar-lhe um serviço de qualidade a um preço competitivo.
           </p>
         </div>
       </div>

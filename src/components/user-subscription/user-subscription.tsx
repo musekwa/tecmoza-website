@@ -32,9 +32,12 @@ const UserSubscription = ({}: Props) => {
 
   return (
     <>
-      <Button onPress={onOpen} className="text-sky-500 bg-white hover:bg-sky-900 hover:text-white">
+    <div className="flex flex-col gap-1 ">
+      <Button onPress={onOpen} variant="solid" className="text-white text-[16px] bg-sky-900">
         Subscrever
       </Button>
+      <p className="text-[12px] text-white">Subscreva à nossa e-newsLetter</p>
+    </div>
       <Modal backdrop="opaque" isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (

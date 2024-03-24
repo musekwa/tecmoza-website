@@ -72,7 +72,19 @@ const config = {
         "slide-top-down": {
           from: { opacity: "0", transform: "translateY(-100%)" },
           to: { opacity: "1", transform: "translateY(0)" },
-        }
+        },
+        "bounce-forever": {
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+        
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -80,6 +92,7 @@ const config = {
         "spin-slow": "spin 6s linear",
         "bounce-once": "bounce 3s",
         "slide-top-down": "slide-top-down 0.3s ease-in-out forwards",
+        "bounce-forever": "bounce-forever 3s ease-in-out infinite",
 
       },
     },

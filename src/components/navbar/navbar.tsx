@@ -37,14 +37,19 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import Image from "next/image";
-import { FaLaptop, FaListCheck, FaMobileScreen, FaTeamspeak } from "react-icons/fa6";
+import {
+  FaLaptop,
+  FaListCheck,
+  FaMobileScreen,
+  FaTeamspeak,
+} from "react-icons/fa6";
 import { MenuItem, MenuOptionsProps } from "./types";
 import { NavigationMenuBar } from "./_components/menu-options";
 import ActionButtons from "./_components/action-buttons";
 
 export const menuItems: MenuItem[] = [
   {
-    title: "Página Inicial",
+    title: "Início",
     menu: "landing-page",
     href: "/",
     options: [
@@ -71,22 +76,22 @@ export const menuItems: MenuItem[] = [
     href: "/services",
     options: [
       {
-        label: "Desenvolvimento de Aplicativos Móveis",
+        label: "Desenvolvimento - Android e iOS",
         icon: <FaMobileScreen size={25} className="text-sky-500" />,
         href: "/mobile",
       },
       {
-        label: "Desenvolvimento de Aplicativos Web",
+        label: "Desenvolvimento - Web e Windows",
         icon: <FaLaptop size={25} className="text-sky-500" />,
         href: "/web",
       },
       {
-        label: "Consultoria Informática",
+        label: "Consultoria - Informatização",
         icon: <FaListCheck size={25} className="text-sky-500" />,
         href: "/consulting",
       },
       {
-        label: "Mentoria e Treinamento Digitais",
+        label: "Treinamento - Mentoria Digital",
         icon: <FaTeamspeak size={25} className="text-sky-500" />,
         href: "/mentoring",
       },
@@ -159,13 +164,19 @@ const Navbar = (props: Props) => {
         >
           <Link href={"/"}>
             <Logo />
-
           </Link>
         </div>
         <div className="flex">
-          <NavigationMenuBar setMenuOptions={setMenuOptions} dropdownVisible={dropdownVisible} setDropdownVisible={setDropdownVisible}  />
-          <div onMouseEnter={handleMouseLeave} className="flex items-center" >
-            <ActionButtons dropdownVisible={dropdownVisible} setDropdownVisible={setDropdownVisible} />
+          <NavigationMenuBar
+            setMenuOptions={setMenuOptions}
+            dropdownVisible={dropdownVisible}
+            setDropdownVisible={setDropdownVisible}
+          />
+          <div onMouseEnter={handleMouseLeave} className="flex items-center">
+            <ActionButtons
+              dropdownVisible={dropdownVisible}
+              setDropdownVisible={setDropdownVisible}
+            />
           </div>
         </div>
       </div>
@@ -193,17 +204,24 @@ const Navbar = (props: Props) => {
                 {menuOptions.title}
               </p>
             </div>
-            <div className="flex flex-wrap gap-8">
+            <div className="grid grid-cols-2  gap-6 w-1/2">
               {menuOptions?.options.map((option, index) => (
                 <Link
                   href={option.href}
                   key={index}
-                  className="min-w-[100px]"
+                  className="flex items-center"
                 >
                   <div className="cursor-pointer hover:bg-gray-100 p-2 rounded-md">
                     <div className="flex gap-4 justify-center items-center">
                       <div>{option.icon}</div>
-                      <div className="text-sm">{option.label}</div>
+                      <div className="flex flex-col">
+                        <div className="text-[16px] font-semibold">
+                          {option.label.split(" - ")[1]}
+                        </div>
+                        <div className="text-[10px] italic">
+                          {option.label.split(" - ")[0]}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Link>
