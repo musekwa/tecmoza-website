@@ -22,15 +22,15 @@ const ServiceDescription = ({
     animation
 }: Props) => {
     const { ref, inView, entry } = useInView({
-        threshold: 0.1,
-        triggerOnce: false,
+        threshold: 0,
+        triggerOnce: true,
       });
       return (
         <motion.div
           className="w-full self-center grid justify-items-center"
           initial={{ opacity: 0, x: animation.x }}
           animate={{ x: inView ? 0 : animation.x, opacity: inView ? 1 : 0 }}	
-          transition={{ duration: 1.5, delay: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
         >
           <div className="">
             <p className="text-xl lg:text-3xl font-bold text-center text-sky-500">

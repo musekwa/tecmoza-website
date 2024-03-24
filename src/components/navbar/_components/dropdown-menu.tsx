@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -11,22 +11,29 @@ import {
   AccordionItem,
 } from "@/components/ui/accordion";
 
-
 import { menuItems } from "../navbar";
+import { useRouter } from "next/navigation";
 
 interface DropdownMenuProps {
   onClose: () => void;
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
-const [accordionValue, setAccordionValue] = useState<string | undefined >();
+  const [accordionValue, setAccordionValue] = useState<string | undefined>();
+  // const router = useRouter();
   const handleLinkClick = () => {
     onClose();
   };
 
   return (
     <div className="max-w-2/3 min-w-1/2 bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
-      <Accordion className="pl-2 text-lg" type="single" collapsible value={accordionValue} onValueChange={setAccordionValue} >
+      <Accordion
+        className="pl-2 text-lg"
+        type="single"
+        collapsible
+        value={accordionValue}
+        onValueChange={setAccordionValue}
+      >
         {menuItems.map((item) => {
           if (item.options.length > 0) {
             return (
@@ -34,27 +41,14 @@ const [accordionValue, setAccordionValue] = useState<string | undefined >();
                 key={item.title}
                 className="my-6 border-b hover:bg-gray-100 rounded-md"
                 value={item.menu}
-                
-                
-
               >
-                <AccordionTrigger className="px-2" >
-                  <Link
-                    onClick={()=>{
-                      if (item.menu === accordionValue) {
-                        setAccordionValue(undefined);
-                        handleLinkClick()
-                      } else {
-                        setAccordionValue(item.menu);
-                      }
-                    }}
-                 
-                    href={item.href}
-                    className="
-                      flex
-                      flex-1
-                      items-center 
-                      justify-between
+                <AccordionTrigger className="px-2">
+                  <div>
+                    <Link
+                      onClick={handleLinkClick}
+                      href={item.href}
+                      className="
+   
                       font-medium
                       py-4
                       px-2
@@ -65,9 +59,10 @@ const [accordionValue, setAccordionValue] = useState<string | undefined >();
                       hover:underline
                       rounded-md
                       "
-                  >
-                    {item.title}
-                  </Link>
+                    >
+                      {item.title}
+                    </Link>
+                  </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.options.map((option) => {
