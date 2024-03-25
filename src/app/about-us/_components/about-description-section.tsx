@@ -16,7 +16,7 @@ const AboutDescriptionSection = (props: Props) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 1.5, delay: 0.5 }}
-      className="p-6 lg:px-24 mt-6  bg-white"
+      className="p-6 lg:px-24  "
     >
       <h1 className="text-xl lg:text-3xl font-bold pb-3">Quem Somos?</h1>
       <div className="w-[75px] h-1 bg-yellow-500 my-4" />

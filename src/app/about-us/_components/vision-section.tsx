@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { GoalIcon, Milestone } from "lucide-react";
 import React from "react";
@@ -17,8 +17,15 @@ const VisionSection = (props: Props) => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 1.5, delay: 0.5 }}
-      className="flex flex-col md:flex-col gap-4 items-center text-[18px]"
+      className="text-[18px]"
     >
+      <h1 className="text-xl lg:text-3xl font-bold text-black">
+      <div className="w-[75px] h-1 bg-yellow-500 my-4" />
+        Em Que Acreditamos
+      </h1>
+      <div className="flex flex-col md:flex-col gap-4 items-center text-[18px]">
+
+
       <div className="w-full">
         <div className="flex flex-col justify-center items-center">
           <div className="p-3 bg-sky-500 rounded-full">
@@ -65,6 +72,7 @@ const VisionSection = (props: Props) => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </motion.div>
   );

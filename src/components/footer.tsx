@@ -18,10 +18,12 @@ import { Input } from "./ui/input";
 import UserSubscriptionForm from "./user-subscription/user-subscription-form";
 import UserSubscription from "./user-subscription/user-subscription";
 import { useDisclosure } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+  const router = useRouter();
   // const {isOpen, onOpen, onOpenChange} = useDisclosure();
   return (
     <footer className=" bg-sky-500 text-white px-4 lg:px-24 pt-2 mt-2">
@@ -59,16 +61,16 @@ const Footer = (props: Props) => {
 
         <ul className="w-fit flex flex-col gap-1 lg:gap-2 ">
           <li>
-            <Link href={"/about"}>- Quem Somos?</Link>
+            <Link href={"/about-us"}>- Quem Somos?</Link>
           </li>
           <li>
-            <Link href={"/blog"}>- Nossos Serviços</Link>
+            <Link href={"/services"}>- Nossos Serviços</Link>
           </li>
           <li>
-            <Link href={"/career"}>- Blog</Link>
+            <Link href={"/blog"}>- Blog</Link>
           </li>
           <li>
-            <Link href={"/contact"}>- Contactar-Nos</Link>
+            <Link href={"/contact-us"}>- Fale Connosco</Link>
           </li>
         </ul>
 

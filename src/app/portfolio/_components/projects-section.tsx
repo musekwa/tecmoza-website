@@ -1,31 +1,11 @@
 "use client"
+import { projects } from "@/lib/data/project";
 import { Chip } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const projects = [
-  {
-    name: "Connect Caju",
-    image: "/images/portfolio/cc1.png",
-    shortDescription:
-      "Registo de Produtores e Plantações de Cajueiros",
-    activities:
-      "Pesquisa e Análise de Requisitos, Desenho UX/UI, Desenvolvimento",
-    technologies: "React Native, MongoDB, Realm, TypeScript, Tailwind",
-    href: "/portfolio/connect-caju",
-  },
-  {
-    name: "SisCaju",
-    image: "/images/portfolio/sis.png",
-    shortDescription: "Sistema de Monitoria das Plantações de Cajueiros",
-    activities:
-      "Pesquisa e Análise de Requisitos, Desenho UX/UI, Desenvolvimento",
-    technologies:
-      "PWA-Progressive Web App, React, Material UI, MongoDB, Mongoose, NodeJS, ExpresJS, TypeScript",
-    href: "/portfolio/siscaju",
-  },
-];
+
 
 type Props = {};
 
@@ -36,7 +16,7 @@ const ProjectsSection = (props: Props) => {
     }
 
   return (
-    <div className="">
+    <div className="md:mt-40">
       <div className="grid grid-cols-1 md:grid-cols-2 px-6 lg:px-24 justify-items-center text-center gap-20 pb-20">
         {projects.map((project, index) => (
           <div 

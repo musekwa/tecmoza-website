@@ -24,10 +24,12 @@ type Props = {};
 
 const AboutPage = (props: Props) => {
   return (
-    <div>
+    <div className="">
+
       <AboutHeroSection />
 
-      <div className=" py-6 h-full w-full">
+
+      <div className=" pb-6 h-full w-full">
         <AboutDescriptionSection />
         <div className="p-6 lg:px-24 ">
           <VisionSection />
