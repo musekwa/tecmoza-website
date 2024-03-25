@@ -40,7 +40,7 @@ const serviceImage = [
     description:
       "Desenvolvemos aplicativos Web e Windows.",
     list: [
-      "Criamos aplicativos Web e Windows responsivos, interactivos e com sistemas de desenho proporcional à marca da empresa cliente.",
+      "Criamos aplicativos Web e Windows responsivos, interactivos e com sistemas de desenho proporcionais à marca da empresa cliente.",
       "Desenhamos uma aquitectura de informação acessível para todas as camadas de usuários, incluindo os de deficiência visual.",
       "Adicionamos funcionalidades que ajudam o nosso cliente actualizar o conteúdo de sua página Web sem a intervenção de um Tecnico de Tecnolgia de Informação.",
     ],

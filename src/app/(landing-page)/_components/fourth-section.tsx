@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const settings = {
   dots: false,
@@ -91,41 +93,51 @@ const slickItems = [
 type Props = {};
 
 const FourthSection = (props: Props) => {
-  // let sliderRef = useRef(null);
-  return (
-    <section className=" ">
-      <div className="flex flex-col">
-        <h1 className="text-xl lg:text-3xl font-bold">
-          Tecnologia e Ferramentas Utilizadas
-        </h1>
-        <div className="w-[75px] h-1 bg-yellow-500 my-4" />
-        <p className="text-sm lg:text-[16px] lg:tracking-wide ">
-          A nossa escolha de tecnologia e ferramentas a usar é determinada pelo
-          modelo de negócio e necessidades da sua empresa.
-        </p>
-      </div>
-      <div className="slider-container gap-3  ">
-        <Slider 
-        // ref={(slider) => (sliderRef = slider)} 
-        {...settings}>
-          {slickItems.map((item, index) => (
-            <div key={index} className="flex justify-center">
-              <div className="flex flex-col justify-center items-center h-32 w-32 bg-white rounded-md">
-                <Image
-                  width={55}
-                  height={55}
-                  src={item.image}
-                  alt={item.title}
-                  className="w-auto h-auto"
-                />
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: false,
+  });
 
-                <p className="text-xs italic text-gray-400">{item.title}</p>
+  return (
+    <section className=" " ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+      >
+        <div className="flex flex-col">
+          <h1 className="text-xl lg:text-3xl font-bold">
+            Tecnologia e Ferramentas Utilizadas
+          </h1>
+          <div className="w-[75px] h-1 bg-yellow-500 my-4" />
+          <p className="text-sm lg:text-[16px] lg:tracking-wide ">
+            A nossa escolha de tecnologia e ferramentas a usar é determinada
+            pelo modelo de negócio e necessidades da sua empresa.
+          </p>
+        </div>
+        <div className="slider-container gap-3  ">
+          <Slider
+            // ref={(slider) => (sliderRef = slider)}
+            {...settings}
+          >
+            {slickItems.map((item, index) => (
+              <div key={index} className="flex justify-center">
+                <div className="flex flex-col justify-center items-center h-32 w-32 bg-white rounded-md">
+                  <Image
+                    width={55}
+                    height={55}
+                    src={item.image}
+                    alt={item.title}
+                    className="w-auto h-auto"
+                  />
+
+                  <p className="text-xs italic text-gray-400">{item.title}</p>
+                </div>
               </div>
-            </div>
-          ))}
-          
-        </Slider>
-      </div>
+            ))}
+          </Slider>
+        </div>
+      </motion.div>
     </section>
   );
 };

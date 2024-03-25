@@ -12,6 +12,7 @@ import SecondSection from "./second-section";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import OurClientSection from "@/components/our-clients-section";
 
 const settings = {
   dots: false,
@@ -69,20 +70,6 @@ const slickItems = [
   },
 ];
 
-const marqueeImages = [
-  {
-    src: "/images/slidingImages/infoSysLogo.png",
-    alt: "infoSys",
-  },
-  {
-    src: "/images/slidingImages/iamLogo.png",
-    alt: "iam",
-  },
-  {
-    src: "/images/slidingImages/abbLogo.png",
-    alt: "abb",
-  },
-];
 
 type Props = {};
 
@@ -156,23 +143,7 @@ const FirstSection = (props: Props) => {
           ))}
         </Slider>
       </div>
-      <div className="my-12 ">
-        <h2 className="text-xl font-semibold text-gray-500">
-          Já trabalhamos aqui...
-        </h2>
-        <Marquee autoFill speed={25}>
-          {marqueeImages.map((image, index) => (
-            <Image
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              width={120}
-              height={50}
-              className="mx-4 z-0 w-auto h-auto"
-            />
-          ))}
-        </Marquee>
-      </div>
+<OurClientSection />
     </section>
   );
 };

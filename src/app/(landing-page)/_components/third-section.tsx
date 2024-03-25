@@ -12,33 +12,33 @@ import {
   FaTeamspeak,
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import { useInView} from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
     serviceName: "Desenvolvimento - Android e iOS",
-    icon: <FaMobileScreen size={30}  />,
+    icon: <FaMobileScreen size={30} />,
     href: "/services/mobile",
     descriprion:
       "Desenvolvemos aplicativos móveis robustos, cativantes, fáceis de usuar, com base na tecnolgia moderna. Os requisitos de negócio do nosso cliente determinam a escolha de tipos de tecnologia que usamos.",
   },
   {
     serviceName: "Desenvolvimento - Web e Windows",
-    icon: <FaLaptop size={30}  />,
+    icon: <FaLaptop size={30} />,
     href: "/services/web",
     descriprion:
       "Ajudamos empresas e pessoas singulares a criarem uma presença no mundo digital por meio de páginas web interactivas, empoderadas com a inteligência artificial e a tecnolgia web moderna.",
   },
   {
-    serviceName: "Consultoria - Informatização",
+    serviceName: "Consultoria - Consultoria da TI",
     icon: <FaListCheck size={30} />,
     href: "/services/consulting",
     descriprion:
       "Desenhamos e implementamos estratégias de transição digital e informatização de modelos de negócio para as empresas, prestando-lhes o nosso apoio antes, durante e depois da implementação.",
   },
-  
+
   {
-    serviceName: "Treinamento - Mentoria Digital",
+    serviceName: "Treinamento - Treinamento Digital",
     icon: <FaTeamspeak size={30} />,
     href: "/services/consulting",
     descriprion:
@@ -49,33 +49,40 @@ const services = [
 type Props = {};
 
 const ThirdSection = (props: Props) => {
-  const {ref, inView, entry} = useInView({threshold: 0, triggerOnce: false});
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: false,
+  });
 
   return (
-    <section className="py-12">
-      <div className="flex flex-col">
+    <section className="py-12" ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="flex flex-col"
+      >
         <h1 className="text-xl lg:text-3xl font-bold">Nossos Serviços</h1>
         <div className="w-[75px] h-1 bg-yellow-500 my-4" />
         <p className="text-sm lg:text-[16px] lg:tracking-wide ">
           A nossa equipa possui experiência em cumprir os objectivos pretendidos
           e moldar as ideias de acordo com a demanda do mercado.
         </p>
-      </div>
-    
+      </motion.div>
 
-
-      <div ref={ref} className=" flex flex-col sm:grid sm:grid-cols-2  xl:grid-cols-4 justify-center items-center justify-items-center gap-8 py-8 ">
+      <div className=" flex flex-col sm:grid sm:grid-cols-2  xl:grid-cols-4 justify-center items-center justify-items-center gap-8 py-8 ">
         {services.map((service, index) => (
-          <motion.div 
-          key={index}
-          initial={{opacity: 0, y: 50}}
-          animate={{opacity: inView ? 1 : 0,  y: inView ?  0 : 50}}
-          transition={{duration: 1.5, delay: 0.5 + index * 0.5}}
-          // 
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+            transition={{ duration: 1.5, delay: 0.5 + index * 0.5 }}
+            //
 
-          className="relative bg-white rounded-md w-[300px] h-[400px] p-2">
+            className="relative bg-white rounded-md w-[300px] h-[400px] p-2"
+          >
             <div className="border-2 bg-sky-500 p-4 w-fit rounded-full text-white">
-            {service.icon}
+              {service.icon}
             </div>
             <h1 className="text-xl md:text-2xl py-4 text-sky-900 font-bold">
               {service.serviceName.slice(
@@ -101,10 +108,7 @@ const ThirdSection = (props: Props) => {
             </div>
           </motion.div>
         ))}
-
-       
       </div>
-      
     </section>
   );
 };
