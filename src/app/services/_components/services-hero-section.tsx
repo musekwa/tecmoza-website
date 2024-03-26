@@ -18,7 +18,7 @@ const ServicesHeroSection = (props: Props) => {
       className="relative h-[300px]">
         <div className="absolute top-20 left-6 right-6 px-8 z-40">
           <h1 className="text-lg md:text-3xl lg:text-5xl font-bold text-white tracking-tight">
-            PRINCIPAIS PRODUTOS E SERVIÇOS{" "}
+            Principais Produtos e Serviços{" "}
           </h1>
         </div>
 

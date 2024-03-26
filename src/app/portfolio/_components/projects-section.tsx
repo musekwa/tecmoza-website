@@ -16,8 +16,8 @@ const ProjectsSection = (props: Props) => {
     }
 
   return (
-    <div className="md:mt-40">
-      <div className="grid grid-cols-1 md:grid-cols-2 px-6 lg:px-24 justify-items-center text-center gap-20 pb-20">
+    <div className="md:mt-40 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 px-6 lg:px-24 justify-items-center text-center gap-20 pb-20 ">
         {projects.map((project, index) => (
           <div 
           onClick={() => handleNavigation(project.href)}
