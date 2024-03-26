@@ -1,15 +1,22 @@
 "use client"
 import { projects } from "@/lib/data/project";
 import { Chip } from "@nextui-org/react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { useInView } from "react-intersection-observer";
+
 
 
 
 type Props = {};
 
 const ProjectsSection = (props: Props) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
     const router = useRouter();
     const handleNavigation = (href: string) => {
         router.push(href);
@@ -17,7 +24,13 @@ const ProjectsSection = (props: Props) => {
 
   return (
     <div className="md:mt-40 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 px-6 lg:px-24 justify-items-center text-center gap-20 pb-20 ">
+      <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 1.5, delay: 0.5 }}
+
+      className="grid grid-cols-1 md:grid-cols-2 px-6 lg:px-24 justify-items-center text-center gap-20 pb-20 ">
         {projects.map((project, index) => (
           <div 
           onClick={() => handleNavigation(project.href)}
@@ -52,7 +65,7 @@ const ProjectsSection = (props: Props) => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

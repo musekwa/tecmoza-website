@@ -103,12 +103,12 @@ export const menuItems: MenuItem[] = [
     href: "/portfolio",
     options: [],
   },
-  {
-    title: "Blog",
-    menu: "blog",
-    href: "/blog",
-    options: [],
-  },
+  // {
+  //   title: "Blog",
+  //   menu: "blog",
+  //   href: "/blog",
+  //   options: [],
+  // },
   {
     title: "Sobre Nós",
     menu: "about-us",

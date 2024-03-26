@@ -82,15 +82,15 @@ const ContactForm = (props: Props) => {
     });
   };
   return (
-    <div className="">
+    <div className="overflow-auto">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 border p-6 bg-white"
+          className="space-y-6 border p-6 bg-white "
         >
           <FormError message={error} />
           <FormSuccess message={success} />
-          <p className="my-4 text-xs font-semibold italic text-gray-400">
+          <p className="my-4 text-xs  text-gray-500">
             Deixe a sua mensagem aqui e nós lhe vamos responder em menos de 2
             horas.
           </p>
@@ -214,7 +214,7 @@ const ContactForm = (props: Props) => {
                 )}
               />
             </div>
-            <div className="w-full overflow-y-hidden">
+            <div className="">
               <FormField
                 control={form.control}
                 name="service"

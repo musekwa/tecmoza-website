@@ -10,9 +10,9 @@ const SendMessagePage = (props: Props) => {
       {/* <h1 className="text-2xl font-bold text-center">Contactar-Nos</h1> */}
 
       <div className="flex flex-col-reverse lg:flex-row gap-8 justify-between">
-        <div className="w-full">
+       
           <ContactForm />
-        </div>
+        
 
         <div className="w-full lg:max-w-[300px] xl:max-w-[450px] bg-sky-200 text-right p-6 flex flex-col items-end">
           <h1 className="text-xl lg:text-2xl text-black font-bold tracking-tight">
