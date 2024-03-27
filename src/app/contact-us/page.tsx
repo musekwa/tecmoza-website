@@ -1,6 +1,7 @@
 import React from "react";
 import ContactForm from "./_components/contact-form";
 import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa6";
+import Link from "next/link";
 
 type Props = {};
 
@@ -10,9 +11,7 @@ const SendMessagePage = (props: Props) => {
       {/* <h1 className="text-2xl font-bold text-center">Contactar-Nos</h1> */}
 
       <div className="flex flex-col-reverse lg:flex-row gap-8 justify-between">
-       
-          <ContactForm />
-        
+        <ContactForm />
 
         <div className="w-full lg:max-w-[300px] xl:max-w-[450px] bg-sky-200 text-right p-6 flex flex-col items-end">
           <h1 className="text-xl lg:text-2xl text-black font-bold tracking-tight">
@@ -38,10 +37,28 @@ const SendMessagePage = (props: Props) => {
             contact@tecmoza.com
           </p>
           <div className="flex flex-row items-center  gap-8 pt-2 ">
-            <FaLinkedin size={24} className="text-sky-900 cursor-pointer" />
-            <FaYoutube size={24} className="text-sky-900 cursor-pointer" />
-            <FaFacebook size={24} className="text-sky-900 cursor-pointer" />
+            <Link
+              href={
+                "https://www.linkedin.com/company/tecmoza-lda/about/?viewAsMember=true"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size={24} className="text-sky-900 cursor-pointer" />
+            </Link>
+            <Link
+              href={"https://www.youtube.com/@tecmoza"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube size={24} className="text-sky-900 cursor-pointer" />
+            </Link>
+            <Link href={"https://www.facebook.com/tecmoza.lda"} target="_blank" rel="noopener noreferrer">
+              <FaFacebook size={24} className="text-sky-900 cursor-pointer" />
+            </Link>
+            <Link href={"https://twitter.com/tecmoza2"} target="_blank" rel="noopener noreferrer">
             <FaTwitter size={24} className="text-sky-900 cursor-pointer" />
+            </Link>
           </div>
         </div>
       </div>

@@ -70,7 +70,6 @@ const slickItems = [
   },
 ];
 
-
 type Props = {};
 
 const FirstSection = (props: Props) => {
@@ -87,16 +86,12 @@ const FirstSection = (props: Props) => {
           initial={{ x: -100 }}
           animate={{ x: inView ? 0 : -100 }}
           transition={{ duration: 2.5, delay: 0 }}
-          className="w-full flex flex-col justify-center items-center   "
+          className="w-full flex flex-col justify-center items-center"
         >
           <div className="w-[200px] h-1 bg-yellow-500 my-2" />
-          <h1
-            className={cn(
-              "text-3xl lg:text-5xl font-bold text-sky-900 text-center"
-            )}
-          >
+          <h1 className="text-3xl lg:text-5xl font-bold text-sky-900 text-center">
             Programadores Altamente Qualificados{" "}
-            <span className="text-lg lg:text-xl font-normal">estão aqui!</span>
+            <span className="text-lg lg:text-xl font-normal text-center">estão aqui!</span>
           </h1>
           <div className="py-6">
             <p className="text-[20px] font-semibold text-center">
@@ -106,8 +101,8 @@ const FirstSection = (props: Props) => {
               Nós podemos ajudar!
             </p>
             <p className="lg:text-[16px] text-gray-600 font-semibold text-center">
-              Com a <span className="font-bold">TECMOZA</span>, terá
-              uma solução digital de alta qualidade a preço competitivo.
+              Com a <span className="font-bold">TECMOZA</span>, terá uma solução
+              digital de alta qualidade a preço competitivo.
             </p>
           </div>
           <Link href={"/contact-us"}>
@@ -143,7 +138,7 @@ const FirstSection = (props: Props) => {
           ))}
         </Slider>
       </div>
-<OurClientSection />
+      <OurClientSection />
     </section>
   );
 };

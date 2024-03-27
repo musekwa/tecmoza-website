@@ -20,14 +20,14 @@ const services = [
     icon: <FaMobileScreen size={30} />,
     href: "/services/mobile",
     descriprion:
-      "Desenvolvemos aplicativos móveis robustos, cativantes, fáceis de usuar, com base na tecnolgia moderna. Os requisitos de negócio do nosso cliente determinam a escolha de tipos de tecnologia que usamos.",
+      "Desenvolvemos aplicativos móveis robustos, cativantes, fáceis de usuar, com base na tecnolgia moderna. Os requisitos de negócio do nosso cliente determinam a escolha de tecnologia que usamos.",
   },
   {
     serviceName: "Desenvolvimento - Web e Windows",
     icon: <FaLaptop size={30} />,
     href: "/services/web",
     descriprion:
-      "Ajudamos empresas e pessoas singulares a criarem uma presença no mundo digital por meio de páginas web interactivas, empoderadas com a inteligência artificial e a tecnolgia web moderna.",
+      "Empoderamos empresas e pessoas singulares com aplicacões baseadas na tecnologia Web, dotando-lhes com sistemas de apoio à decisão acessíveis a partir de um navegador e que os permitem tomar decisões informadas.",
   },
   {
     serviceName: "Consultoria - Consultoria da TI",

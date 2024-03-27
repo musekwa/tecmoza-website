@@ -49,10 +49,32 @@ const Footer = (props: Props) => {
             </div>
 
             <div className="flex flex-row items-center justify-between gap-2 pt-1 ">
-              <FaLinkedin size={20} className="cursor-pointer" />
-              <FaYoutube size={20} className="cursor-pointer" />
-              <FaFacebook size={20} className="cursor-pointer" />
-              <FaTwitter size={20} className="cursor-pointer" />
+              <Link
+                href={
+                  "https://www.linkedin.com/company/tecmoza-lda/about/?viewAsMember=true"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={20} className="cursor-pointer" />
+              </Link>
+              <Link
+                href={"https://www.youtube.com/@tecmoza"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube size={20} className="cursor-pointer" />
+              </Link>
+              <Link
+                href={"https://www.facebook.com/tecmoza.lda"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook size={20} className="cursor-pointer" />
+              </Link>
+              <Link href={"https://twitter.com/tecmoza2"} target={"_blank"} rel="noopener noreferrer">
+                <FaTwitter size={20} className="cursor-pointer" />
+              </Link>
             </div>
           </div>
         </div>

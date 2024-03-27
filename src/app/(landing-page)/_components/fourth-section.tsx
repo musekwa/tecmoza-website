@@ -77,16 +77,24 @@ const slickItems = [
     image: "/images/nodeJsLogo.png",
   },
   {
-    title: "TypeScript",
+    title: "MongoDB",
     image: "/images/mongoDbLogo.png",
   },
   {
-    title: "TypeScript",
+    title: "PostgreSQL",
     image: "/images/postgreSqlLogo.jpg",
   },
   {
-    title: "TypeScript",
+    title: "Convex",
     image: "/images/convexLogo.png",
+  },
+  {
+    title: "Python",
+    image: "/images/pythonLogo.png",
+  },
+  {
+    title: "Pandas",
+    image: "/images/pandasLogo.png",
   },
 ];
 
@@ -107,7 +115,7 @@ const FourthSection = (props: Props) => {
       >
         <div className="flex flex-col">
           <h1 className="text-xl lg:text-3xl font-bold">
-            Tecnologia e Ferramentas Utilizadas
+            Algumas Tecnologias Utilizadas
           </h1>
           <div className="w-[75px] h-1 bg-yellow-500 my-4" />
           <p className="text-sm lg:text-[16px] lg:tracking-wide ">
@@ -115,7 +123,7 @@ const FourthSection = (props: Props) => {
             pelo modelo de negócio e necessidades da sua empresa.
           </p>
         </div>
-        <div className="slider-container gap-3  ">
+        <div className="slider-container gap-3  pt-6">
           <Slider
             // ref={(slider) => (sliderRef = slider)}
             {...settings}

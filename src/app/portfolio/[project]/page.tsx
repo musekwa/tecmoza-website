@@ -2,19 +2,21 @@
 import { projects } from "@/lib/data/project";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SimilarProjectsSection from "../_components/similar-prects-section";
 import ProjectCard from "../_components/project-card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {};
 
 const ProjectPage = (props: Props) => {
+  const router = useRouter();
   const params = useParams();
   const project = projects.find(
     (project) => project.href.split("/").pop() === params.project
   );
 
-  const router = useRouter();
+
   useEffect(() => {
     const handleNavigation = (href: string) => {
       router.push(href);
@@ -30,22 +32,26 @@ const ProjectPage = (props: Props) => {
     return null;
   }
 
+
   return (
-    <div className="w-full h-full pb-20 ">
+    <div key={Math.random()} className="w-full h-full pb-20 ">
       <div className="flex flex-col justify-center items-center p-6 lg:p-24">
-        <div className="p-16 bg-white rounded-2xl">
+
+
           <Image
             src={project.image}
             alt={project.name}
             width={600}
             height={600}
             priority
+            
             style={{
               aspectRatio: "1",
             }}
             className="bg-gray-400 object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
           />
-        </div>
+
+
         <div className="lg:w-2/3 py-12 flex flex-col lg:flex-row justify-between gap-6">
           <div className="w-full space-y-6">
             <div className="">
