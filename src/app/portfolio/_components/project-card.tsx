@@ -36,7 +36,7 @@ const ProjectCard = ({
           height={300}
           priority
           style={{
-            aspectRatio: "1",
+            // aspectRatio: "1",
           }}
           className=" object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
         />

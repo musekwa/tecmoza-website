@@ -38,13 +38,13 @@ const ProjectsSection = (props: Props) => {
           className="group w-full  flex flex-col items-center cursor-pointer">
             <Image
               src={project.image}
-              alt="connect caju"
+              alt={project.name}
               // fill
               width={500}
               height={500}
               priority
               style={{
-                aspectRatio: "1",
+                // aspectRatio: "1",
               }}
               className=" group-hover:scale-90 duration-300 transition-all ease-in-out"
             />

@@ -41,12 +41,12 @@ const ProjectPage = (props: Props) => {
           <Image
             src={project.image}
             alt={project.name}
-            width={600}
-            height={600}
+            width={500}
+            height={500}
             priority
             
             style={{
-              aspectRatio: "1",
+              // aspectRatio: "1",
             }}
             className=" object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
           />
