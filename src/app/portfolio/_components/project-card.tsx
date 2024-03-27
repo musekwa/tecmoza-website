@@ -25,9 +25,9 @@ const ProjectCard = ({
   return (
     <div
     onClick={()=>handleNavigation(href)}
-    className="inline-block mx-10  w-[300px] rounded-2xl cursor-pointer hover:scale-95 transition-all duration-300"
+    className="inline-block mx-10 min-w-[80px]  max-w-[300px]  rounded-2xl cursor-pointer hover:scale-95 transition-all duration-300"
   >
-    
+    .
       <div className="flex flex-col">
         <Image
           src={image}
@@ -38,7 +38,7 @@ const ProjectCard = ({
           style={{
             aspectRatio: "1",
           }}
-          className="bg-gray-400 object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
+          className=" object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
         />
       </div>
       <div className="w-full whitespace-normal overflow-wrap-anywhere break-words py-3" >
