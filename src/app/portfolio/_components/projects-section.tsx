@@ -46,20 +46,20 @@ const ProjectsSection = (props: Props) => {
               style={{
                 aspectRatio: "1",
               }}
-              className="bg-gray-400  group-hover:scale-90 duration-300 transition-all ease-in-out"
+              className=" group-hover:scale-90 duration-300 transition-all ease-in-out"
             />
             <div className="py-6">
-              <div className="flex flex-row gap-6 justify-around text-[15px] text-black">
+              <div className="flex flex-row gap-6 justify-around text-[14px] text-black">
                 {project.activities.split(",").map((activity, index) => (
                   <div key={index}>{activity}</div>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-3 justify-center text-[15px] text-black px-6 py-2">
+              <div className="flex flex-wrap gap-3 justify-center text-black px-6 py-2">
                 {project.technologies.split(",").map((technology, index) => (
                 <Chip key={index} className="text-gray-500 bg-slate-200 text-[12px]">{technology}</Chip>
                 ))}
               </div>
-              <h1 className="text-2xl lg:text-4xl text-black font-semibold group-hover:text-sky-500">
+              <h1 className="text-xl lg:text-2xl text-black font-semibold group-hover:text-sky-500">
                 {project.name} - {project.shortDescription}
               </h1>
             </div>

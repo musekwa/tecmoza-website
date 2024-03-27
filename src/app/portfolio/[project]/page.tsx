@@ -48,7 +48,7 @@ const ProjectPage = (props: Props) => {
             style={{
               aspectRatio: "1",
             }}
-            className="bg-gray-400 object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
+            className=" object-cover rounded-2xl  group-hover:scale-90 duration-300 transition-all ease-in-out"
           />
 
 
