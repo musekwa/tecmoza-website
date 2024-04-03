@@ -4,6 +4,7 @@ import { contactFormSchema } from "@/schemas";
 import db from "@/lib/db";
 import { userAction } from "./user";
 import { messageAction } from "./message";
+import { Resend } from 'resend';
 
 export const contact = async (values: z.infer<typeof contactFormSchema>) => {
   const validatedFields = contactFormSchema.safeParse(values);
@@ -34,6 +35,23 @@ export const contact = async (values: z.infer<typeof contactFormSchema>) => {
       { companyName, companyWebsite, service, message },
       savedUserId
     );
+
+    // include the message to an email sent to musekwa@tecmoza.com
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'musekwa@tecmoza.com',
+      subject: `Para TECMOZA: ${name} (${email})`,
+      html: `<div>
+              <h1 style="font-size: 20px; font-weight: bold;">Serviço: ${service}</h1>
+              <p style="font-size: 16px; ">Nome: ${name}</p>
+              <p style="font-size: 16px;">Email: ${email}</p>
+              <p style="font-size: 16px;">Telefone: ${phone}</p>
+              <p style="font-size: 16px;">Mensagem: ${message}</p>
+            </div>`
+    });
+    
 
     return {
       success:

@@ -44,7 +44,7 @@ const Footer = (props: Props) => {
             <div className="flex flex-row items-center gap-2">
               <Mail size={16} />
               <div>
-                <p>contact@tecmoza.com</p>
+                <p>musekwa@tecmoza.com</p>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ const Footer = (props: Props) => {
         <div className="w-fit flex flex-row items-start gap-2 ">
           <MapPin size={16} className="mt-2" />
           <div className="tex-[13px]">
-            <h1 className="font-bold text-xl lg:text-2xl">
+            <h1 className="font-bold text-lg lg:text-2xl">
               Mozambique, Maputo
             </h1>
             <p>Av. 25 de Setembro, No. 412</p>
@@ -120,7 +120,9 @@ const Footer = (props: Props) => {
           </p>
         </div>
         <div className="hover:text-sky-900 cursor-pointer">
+          <Link href={"/privacy-policy"}>
           <p className="text-white">Privacidade Política Termos de Uso</p>
+          </Link>
         </div>
       </div>
     </footer>

@@ -34,7 +34,7 @@ const SendMessagePage = (props: Props) => {
           <p className="leading-loose text-gray-600 py-4">
             +258 84 044 5375 <br />
             +258 86 014 0080 <br />
-            contact@tecmoza.com
+            musekwa@tecmoza.com
           </p>
           <div className="flex flex-row items-center  gap-8 pt-2 ">
             <Link
