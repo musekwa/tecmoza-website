@@ -27,7 +27,7 @@ const services = [
     icon: <FaLaptop size={30} />,
     href: "/services/web",
     descriprion:
-      "Empoderamos empresas e pessoas singulares com aplicacões baseadas na tecnologia Web, dotando-lhes com sistemas de apoio à decisão acessíveis a partir de um navegador e que os permitem tomar decisões informadas.",
+      "Empoderamos empresas e pessoas singulares com aplicacões baseadas na tecnologia Web que, além de uma presença no mundo virtual, dota-lhes com uma sistema de apoio à decisão que permite tomar decisões informadas.",
   },
   {
     serviceName: "Consultoria - Consultoria da TI",

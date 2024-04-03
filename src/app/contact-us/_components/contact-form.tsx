@@ -214,7 +214,7 @@ const ContactForm = (props: Props) => {
                 )}
               />
             </div>
-            <div className="">
+            <div className="w-full">
               <FormField
                 control={form.control}
                 name="service"
