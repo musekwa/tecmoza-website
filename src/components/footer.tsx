@@ -26,7 +26,7 @@ const Footer = (props: Props) => {
   const router = useRouter();
   // const {isOpen, onOpen, onOpenChange} = useDisclosure();
   return (
-    <footer className=" bg-sky-500 text-white px-4 lg:px-24 pt-2 mt-2">
+    <footer className=" bg-sky-500 text-white px-4 lg:px-24 pt-2 ">
       <div className="xs:grid xs:grid-cols-1 lg:flex lg:flex-row lg:justify-between gap-6">
         <div className="w-fit flex flex-col">
           <div className=" bg-white  p-0.5 flex flex-row items-center justify-center border rounded-md border-sky-500 cursor-pointer ">

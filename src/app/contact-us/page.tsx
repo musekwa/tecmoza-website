@@ -7,7 +7,7 @@ type Props = {};
 
 const SendMessagePage = (props: Props) => {
   return (
-    <div className="px-6 lg:px-24 pt-6">
+    <div className="px-6 lg:px-24 py-6">
       {/* <h1 className="text-2xl font-bold text-center">Contactar-Nos</h1> */}
 
       <div className="flex flex-col-reverse lg:flex-row gap-8 justify-between">

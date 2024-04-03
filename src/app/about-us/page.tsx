@@ -29,15 +29,17 @@ const AboutPage = (props: Props) => {
       <AboutHeroSection />
 
 
-      <div className=" pb-6 h-full w-full">
+      <div className="h-full w-full">
         <AboutDescriptionSection />
         <div className="p-6 lg:px-24 ">
           <VisionSection />
-          <div className="my-6">
-            <OurValuesSection />
-          </div>
 
         </div>
+          <div className="my-6 bg-white">
+          <div className="p-6 lg:px-24 ">
+            <OurValuesSection />
+            </div>
+          </div>
           <OurClientSection />
         <GetInTouch />
       </div>

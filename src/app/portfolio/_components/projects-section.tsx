@@ -48,8 +48,8 @@ const ProjectsSection = (props: Props) => {
               }}
               className=" group-hover:scale-90 duration-300 transition-all ease-in-out"
             />
-            <div className="py-6">
-              <div className="flex flex-row gap-6 justify-around text-[14px] text-black">
+            <div className="py-6 ">
+              <div className="flex flex-wrap gap-2  md:gap-6 justify-around text-[14px] text-black">
                 {project.activities.split(",").map((activity, index) => (
                   <div key={index}>{activity}</div>
                 ))}

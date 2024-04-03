@@ -6,7 +6,7 @@ const PrivacyPolicyPage = (props: Props) => {
   return (
     <div className="h-full px-6 py-16 lg:px-24 space-y-6 text-[18px] bg-white">
       <div className="h-[200px] bg-gray-200 flex flex-col justify-center">
-        <h1 className="text-xl lg:text-2xl font-bold text-sky-500 ">
+        <h1 className="text-xl lg:text-3xl font-bold">
           Política de Privacidade & Termos de Uso
         </h1>
         <div className="w-[200px] h-1 bg-yellow-500 my-2" />
