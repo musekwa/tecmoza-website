@@ -80,22 +80,22 @@ export const menuItems: MenuItem[] = [
       {
         label: "Desenvolvimento - Android e iOS",
         icon: <FaMobileScreen size={25} className="text-sky-500" />,
-        href: "/services/mobile",
+        href: "/services",
       },
       {
         label: "Desenvolvimento - Web e Windows",
         icon: <FaLaptop size={25} className="text-sky-500" />,
-        href: "/services/web",
+        href: "/services",
       },
       {
         label: "Consultoria - Consultoria Informática",
         icon: <FaListCheck size={25} className="text-sky-500" />,
-        href: "/services/consulting",
+        href: "/services",
       },
       {
         label: "Treinamento e Mentoria - Treinamento Digital",
         icon: <FaTeamspeak size={25} className="text-sky-500" />,
-        href: "/services/mentoring",
+        href: "/services",
       },
     ],
   },

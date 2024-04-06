@@ -1,7 +1,5 @@
 import GetInTouch from "@/components/get-in-touch";
 
-import { Button } from "@/components/ui/button";
-
 import React from "react";
 import ServicesHeroSection from "./_components/services-hero-section";
 import ServiceImage from "./_components/service-image";
@@ -12,7 +10,7 @@ const serviceImage = [
   {
     serviceName: "mobile",
     imageHref: "/images/services/mobile.png",
-    serviceHref: "/services/mobile",
+    serviceHref: "/services",
     imageBlockAnimation: { x: -40 },
     descriptionBlockAnimation: { x: 200 },
     title: "Aplicativos Móveis - Android e iOS",
@@ -30,7 +28,7 @@ const serviceImage = [
   {
     serviceName: "web",
     imageHref: "/images/services/web.png",
-    serviceHref: "/services/web",
+    serviceHref: "/services",
     imageBlockAnimation: { x: 200 },
     descriptionBlockAnimation: { x: -40 },
     title: "Aplicativos Web e Windows",
@@ -48,7 +46,7 @@ const serviceImage = [
   {
     serviceName: "consulting",
     imageHref: "/images/services/consulting.png",
-    serviceHref: "/services/consulting",
+    serviceHref: "/services",
     imageBlockAnimation: { x: -40 },
     descriptionBlockAnimation: { x: 200 },
     title: "Consultoria Informática",
@@ -67,7 +65,7 @@ const serviceImage = [
   {
     serviceName: "mentoring",
     imageHref: "/images/services/mentoring.png",
-    serviceHref: "/services/web",
+    serviceHref: "/services",
     imageBlockAnimation: { x: 200 },
     descriptionBlockAnimation: { x: -40 },
     title: "Treinamento Digital",
