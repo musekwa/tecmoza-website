@@ -32,32 +32,44 @@ const UserSubscription = ({}: Props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
+    <div className="md:flex items-center space-y-2">
+    <p className="text-[12px] mr-4">
+      Subscreva à nossa e-newsLetter
+    </p>
+      <Dialog
+        open={isDialogOpen}
+        onOpenChange={(open) => {
+          setIsDialogOpen(open);
+        }}
 
-      <Dialog open={isDialogOpen} onOpenChange={(open) =>{
-        setIsDialogOpen(open);
-      }} >
+      >
         <DialogTrigger asChild>
+          {/* <div className="flex flex-col-reverse md:flex-row-reverse gap-1 md:gap-4 justify-between items-center"> */}
+
           <Button
-         
             variant="solid"
-            className="text-white text-[16px] bg-sky-900"
+            className="text-white md:text-[16px] bg-sky-900"
           >
             Subscrever
           </Button>
+
+          {/* </div> */}
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="mb-8 my-8">
+            <DialogTitle className="mb-2">
               <h1 className="text-center text-3xl font-bold">Subscrever</h1>
             </DialogTitle>
             <DialogDescription>
-              <UserSubscriptionForm isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen} />
+              <UserSubscriptionForm
+                isDialogOpen={isDialogOpen}
+                setIsDialogOpen={setIsDialogOpen}
+              />
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
-
+    </div>
   );
 };
 

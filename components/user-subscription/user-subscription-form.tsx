@@ -55,7 +55,9 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
   };
   return (
     <div className=" max-w-[550px]">
-
+      <p className="text-[12px] text-center mb-8 ">
+      Respeitamos a sua privacidade. <br /> Não usaremos seus dados pessoais para os fins não autorizados!
+      </p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
