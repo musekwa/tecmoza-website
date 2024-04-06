@@ -41,7 +41,9 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
         if (data.success) {
           setSuccess(data.success);
           form.reset();
-          setIsDialogOpen(false);
+          setTimeout(() => {
+            setIsDialogOpen(false);
+          }, 3000)
           toast({
             variant: "success",
             title: "Subscrição Sucedida",
@@ -49,6 +51,11 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
           })
         } else {
           setError(data.error);
+          toast({
+            variant: "destructive",
+            title: "Subscrição não foi sucedida",
+            description: "O seu email não foi adicionado. Tente subscrever novamente.",
+          })
         }
       });
     });
