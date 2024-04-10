@@ -57,7 +57,7 @@ const ProjectPage = (props: Props) => {
             <div className="">
               <h1 className="font-semibold text-lg">Nome do produto:</h1>
 
-              <p className="text-sm lg:text-[16px]  text-black leading-8">
+              <p className="text-sm lg:text-[16px] text-gray-500 leading-8">
                 {project.name}
               </p>
             </div>
@@ -66,7 +66,7 @@ const ProjectPage = (props: Props) => {
               <h4 className="font-semibold text-lg">Actividades realizadas:</h4>
               {project.activities.split(",").map((activity, index) => (
                 <p
-                  className="text-sm lg:text-[16px]  text-black leading-8"
+                  className="text-sm lg:text-[16px]  text-gray-500 leading-8"
                   key={index}
                 >
                   {activity}
@@ -78,7 +78,7 @@ const ProjectPage = (props: Props) => {
               <h4 className="font-semibold text-lg">Tecnologia:</h4>
               {project.technologies.split(",").map((technology, index) => (
                 <p
-                  className="text-sm lg:text-[16px]  text-black leading-8"
+                  className="text-sm lg:text-[16px]  text-gray-500 leading-8"
                   key={index}
                 >
                   {technology}
@@ -90,7 +90,7 @@ const ProjectPage = (props: Props) => {
           <div className="w-full space-y-6">
             <div>
               <h4 className="font-semibold text-lg">Breve Descrição:</h4>
-              <p className="text-sm lg:text-[16px]  text-black leading-8">
+              <p className="text-sm lg:text-[16px]  text-gray-500 leading-8">
                 {project.longDescription}
               </p>
             </div>
@@ -99,7 +99,7 @@ const ProjectPage = (props: Props) => {
               <ol className="list-disc list-inside">
                 {project.solvedProblems.map((problem, index) => (
                   <li
-                    className="text-sm lg:text-[16px]  text-black leading-8"
+                    className="text-sm lg:text-[16px]  text-gray-500 leading-8"
                     key={index}
                   >
                     {problem}
@@ -113,7 +113,7 @@ const ProjectPage = (props: Props) => {
               <ol className="list-disc list-inside">
                 {project.features.map((feature, index) => (
                   <li
-                    className="text-sm lg:text-[16px]  text-black leading-8"
+                    className="text-sm lg:text-[16px]  text-gray-500 leading-8"
                     key={index}
                   >
                     {feature}
@@ -125,7 +125,7 @@ const ProjectPage = (props: Props) => {
         </div>
       </div>
 
-      <div className="bg-white py-6">
+      <div className="bg-white dark:bg-gray-900 py-6">
         <div className="p-6 lg:px-24">
           <h1 className="text-xl lg:text-3xl font-bold">Projectos Similares</h1>
           <div className="w-[75px] h-1 bg-yellow-500 my-4" />

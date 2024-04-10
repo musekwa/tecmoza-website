@@ -117,7 +117,7 @@ const OurValuesSection = (props: Props) => {
       <div className="flex flex-col justify-between">
         <Slider {...settings}>
           {ourValues.map((item, index) => (
-            <div key={index} className=" min-h-52 shadow-md ">
+            <div key={index} className=" min-h-52 shadow-md dark:bg-black ">
               <div className="flex justify-center items-center my-2 ">
                 <div className="p-1 rounded-full bg-sky-900 text-white">
                   {item.icon}

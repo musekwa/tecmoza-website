@@ -2,42 +2,9 @@
 import React, { useState } from "react";
 import Logo from "../logo";
 
-import {
-  Headphones,
-  Info,
-  Home,
-  LibrarySquare,
-  LifeBuoy,
-  Newspaper,
-  PaintBucket,
-  Settings,
-  Smile,
-  Sparkles,
-  UserCircle2,
-  UserPlus,
-  GraduationCap,
-  Download,
-  DollarSign,
-  Code2Icon,
-  Code,
-  ChevronDown,
-  Camera,
-  Building2,
-  BarChart,
-  AlignJustify,
-  Lock,
-  Users,
-  ScreenShare,
-  TabletSmartphone,
-  LayoutPanelTop,
-} from "lucide-react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-
 import { motion } from "framer-motion";
-import clsx from "clsx";
 import Link from "next/link";
-
-import Image from "next/image";
 import {
   FaLaptop,
   FaListCheck,
@@ -47,7 +14,7 @@ import {
 import { MenuItem, MenuOptionsProps } from "./types";
 import { NavigationMenuBar } from "./_components/menu-options";
 import ActionButtons from "./_components/action-buttons";
-import LanguageChanger from "@/LanguageChanger";
+import { ModeToggle } from "../mode-toggle";
 
 export const menuItems: MenuItem[] = [
   {
@@ -158,8 +125,8 @@ const Navbar = (props: Props) => {
   };
 
   return (
-    <div className="sticky top-0 z-50">
-      <div className="flex items-center justify-between px-4 py-5 shadow-sm lg:px-24 bg-white h-24">
+    <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 ">
+      <div className="flex items-center justify-between px-4 py-5 shadow-sm lg:px-24 h-24">
         <div
           onMouseOver={handleMouseLeave}
           className="hover:scale-110 transition-all duration-300 hover:shadow-md               
@@ -169,7 +136,7 @@ const Navbar = (props: Props) => {
             <Logo />
           </Link>
         </div>
-          {/* <LanguageChanger /> */}
+        <ModeToggle />
         <div className="flex">
           <NavigationMenuBar
             setMenuOptions={setMenuOptions}
@@ -182,10 +149,6 @@ const Navbar = (props: Props) => {
               setDropdownVisible={setDropdownVisible}
             />
           </div>
-       
-
-         
-
         </div>
       </div>
       {menuOptions?.active && menuOptions.options.length > 0 && (
@@ -200,7 +163,7 @@ const Navbar = (props: Props) => {
             staggerChildren: 0.2,
           }}
           variants={slideVariants}
-          className="absolute top-24 left-0 right-0 z-50 bg-white"
+          className="absolute top-24 left-0 right-0 z-50 bg-white dark:bg-slate-900 dark:border-none"
         >
           <div
             onMouseLeave={handleMouseLeave}

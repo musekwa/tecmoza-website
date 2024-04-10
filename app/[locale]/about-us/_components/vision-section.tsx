@@ -26,7 +26,7 @@ const VisionSection = (props: Props) => {
       <div className="w-[75px] h-1 bg-yellow-500 my-4" />
 
       <div className="flex flex-col md:flex-row gap-6 ">
-        <div className="flex flex-col justify-center  md:w-1/2 bg-white p-4">
+        <div className="flex flex-col justify-center  md:w-1/2 bg-white dark:bg-black p-4">
           <div className="flex gap-4 items-center">
             <div className="p-2 bg-sky-500 rounded-full w-fit h-fit justify-center items-center">
               <GoalIcon className="w-8 h-8  text-white " />

@@ -27,7 +27,7 @@ const ServiceDescription = ({
       });
       return (
         <motion.div
-          className="w-full self-center grid justify-items-center"
+          className="w-full self-center grid justify-items-center  p-2"
           initial={{ opacity: 0, x: animation.x }}
           animate={{ x: inView ? 0 : animation.x, opacity: inView ? 1 : 0 }}	
           transition={{ duration: 0.5, delay: 0 }}

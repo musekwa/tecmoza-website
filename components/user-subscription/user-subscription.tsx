@@ -32,7 +32,7 @@ const UserSubscription = ({}: Props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <div className="md:flex items-center space-y-2">
+    <div className="md:flex items-center space-y-2 ">
     <p className="text-[12px] mr-4">
       Subscreva à nossa e-newsLetter
     </p>
@@ -41,6 +41,7 @@ const UserSubscription = ({}: Props) => {
         onOpenChange={(open) => {
           setIsDialogOpen(open);
         }}
+        
 
       >
         <DialogTrigger asChild>
@@ -55,7 +56,7 @@ const UserSubscription = ({}: Props) => {
 
           {/* </div> */}
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="bg-white dark:bg-gray-900">
           <DialogHeader>
             <DialogTitle className="mb-2">
               <h1 className="text-center text-3xl font-bold">Subscrever</h1>

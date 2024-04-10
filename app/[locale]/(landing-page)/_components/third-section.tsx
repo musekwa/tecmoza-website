@@ -79,7 +79,7 @@ const ThirdSection = (props: Props) => {
             transition={{ duration: 1.5, delay: 0.5 + index * 0.5 }}
             //
 
-            className="relative bg-white rounded-md w-[300px] h-[400px] p-2"
+            className="relative bg-white dark:bg-gray-900 rounded-md w-[300px] h-[400px] p-2"
           >
             <div className="border-2 bg-sky-500 p-4 w-fit rounded-full text-white">
               {service.icon}
@@ -89,7 +89,7 @@ const ThirdSection = (props: Props) => {
                 service.serviceName.split(" ")[0].length
               )}
               <br />
-              <span className="text-sm italic text-black font-normal">
+              <span className="text-sm italic text-black dark:text-gray-600 font-normal">
                 {service.serviceName.split(" ")[0]}
               </span>
             </h1>

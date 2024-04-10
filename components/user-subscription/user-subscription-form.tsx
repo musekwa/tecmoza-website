@@ -61,14 +61,14 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
     });
   };
   return (
-    <div className=" max-w-[550px]">
+    <div className="bg-white dark:bg-gray-900 max-w-[550px]">
       <p className="text-[12px] text-center mb-8 ">
       Respeitamos a sua privacidade. <br /> Não usaremos seus dados pessoais para os fins não autorizados!
       </p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6  bg-white"
+          className="space-y-6  bg-gray-50 dark:bg-gray-900"
         >
 
           <div className="flex flex-col md:flex-row gap-2 overflow-x-hidden">
@@ -79,7 +79,7 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <span className="text-gray-500">Nome</span>{" "}
+                      <span className="">Nome</span>{" "}
                       <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -89,6 +89,7 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
                         {...field}
                         placeholder="O seu nome"
                         type="text"
+                        className="text-gray-600 rounded-xl border"
                       />
                     </FormControl>
                     <FormMessage className="text-[10px]" />
@@ -103,7 +104,7 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      <span className="text-gray-500">Email</span>{" "}
+                      <span className="">Email</span>{" "}
                       <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -113,6 +114,7 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
                         {...field}
                         placeholder="O seu email"
                         type="text"
+                        className="text-gray-600 rounded-xl border"
                       />
                     </FormControl>
                     <FormMessage className="text-[10px]" />

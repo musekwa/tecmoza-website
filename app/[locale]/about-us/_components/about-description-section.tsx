@@ -25,7 +25,7 @@ const AboutDescriptionSection = (props: Props) => {
       <div className="w-[75px] h-1 bg-yellow-500 my-4" />
 
       <div className="flex flex-row gap-8">
-        <div className="w-full text-[18px] ">
+        <div className="w-full text-[18px] text-gray-500 ">
           <p className="tracking-wide text-justify leading-6 py-2">
             A <b>Tecmoza</b> é uma empresa de tecnologia da informação sediada
             em Maputo, Moçambique e constituída por uma equipe ágil de

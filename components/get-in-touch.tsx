@@ -6,7 +6,7 @@ type Props = {};
 
 const GetInTouch = (props: Props) => {
   return (
-    <div className="bg-sky-200 mt-12 p-8">
+    <div className="bg-sky-200 dark:bg-black dark:border-t dark:border-t-gray-800 mt-12 p-8">
       <div className="flex flex-col justify-center items-center lg:w-2/3 mx-auto gap-4">
         <h1 className="text-center text-xl lg:text-3xl font-bold">
           Tem Algum Projecto Informático Em Mente?

@@ -21,7 +21,7 @@ const AboutPage = async (props: Props) => {
         <div className="p-6 lg:px-24 ">
           <VisionSection />
         </div>
-        <div className="my-6 bg-white">
+        <div className="my-6 bg-white dark:bg-gray-900">
           <div className="p-6 lg:px-24 ">
             <OurValuesSection />
           </div>

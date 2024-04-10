@@ -39,7 +39,7 @@ const SimilarProjectsSection = ({
         {children}
     </div>
     <button
-        className="absolute left-1 md:left-4  lg:left-24 top-1/2 transform -translate-y-1/2 bg-gray-300 bg-opacity-70 hover:bg-sky-900  font-bold p-2 rounded-md"
+        className="absolute left-1 md:left-4  lg:left-24 top-1/2 transform -translate-y-1/2 bg-gray-300  bg-opacity-70 hover:bg-sky-900  font-bold p-2 rounded-md"
         onClick={handleLeftScroll}
       >
         <ArrowLeft size={20} className='text-sky-500 hover:text-white' />

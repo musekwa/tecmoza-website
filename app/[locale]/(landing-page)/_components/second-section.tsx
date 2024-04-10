@@ -41,7 +41,7 @@ const SecondSection = (props: Props) => {
           ref={countupRef}
           className="grid grid-cols-2 xl:grid-cols-4 text-center items-center justify-items-center justify-between gap-4 lg:gap-10 py-6"
         >
-          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1 bg-white flex flex-row justify-evenly items-center rounded-md gap-2">
+          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1 bg-white dark:bg-black flex flex-row justify-evenly items-center rounded-md gap-2">
             <CalendarDays className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900 " />
             <div className="flex flex-col justify-center items-center w-1/2 ">
               <h2 className="text-xl lg:text-3xl font-bold text-center">
@@ -61,7 +61,7 @@ const SecondSection = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white flex flex-row justify-evenly items-center rounded-md gap-2 ">
+          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white dark:bg-black flex flex-row justify-evenly items-center rounded-md gap-2 ">
             <Handshake className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
@@ -75,7 +75,7 @@ const SecondSection = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white flex flex-row justify-evenly items-center rounded-md gap-2 ">
+          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white dark:bg-black flex flex-row justify-evenly items-center rounded-md gap-2 ">
             <TabletSmartphone className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center ">
@@ -89,7 +89,7 @@ const SecondSection = (props: Props) => {
               </p>
             </div>
           </div>
-          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white flex flex-row justify-evenly items-center rounded-md gap-2 ">
+          <div className="min-w-[150px] lg:min-w-[200px] h-24 p-1  bg-white dark:bg-black flex flex-row justify-evenly items-center rounded-md gap-2 ">
             <Smile className="w-8 h-8 lg:w-12 lg:h-12 text-sky-900" />
             <div className="flex flex-col justify-center items-center w-1/2">
               <h2 className="text-xl lg:text-3xl font-bold text-center">

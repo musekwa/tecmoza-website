@@ -113,7 +113,7 @@ const FourthSection = (props: Props) => {
         animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
         transition={{ duration: 1.5, delay: 0.5 }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           <h1 className="text-xl lg:text-3xl font-bold">
             Algumas Tecnologias Utilizadas
           </h1>
@@ -123,28 +123,29 @@ const FourthSection = (props: Props) => {
             pelo modelo de negócio e necessidades da sua empresa.
           </p>
         </div>
-        <div className="slider-container gap-3  pt-6">
+      
           <Slider
             // ref={(slider) => (sliderRef = slider)}
             {...settings}
           >
             {slickItems.map((item, index) => (
-              <div key={index} className="flex justify-center">
-                <div className="flex flex-col justify-center items-center h-32 w-32 bg-white rounded-md">
+              <div className="container m-auto">
+
+                <div key={index} className="flex flex-col justify-center items-center shadow-md border border-gray-300 dark:border-gray-700 h-32 w-32 bg-white dark:bg-black rounded-md">
                   <Image
                     width={55}
                     height={55}
                     src={item.image}
                     alt={item.title}
                     className="w-auto h-auto"
-                  />
+                    />
 
                   <p className="text-xs italic text-gray-400">{item.title}</p>
                 </div>
-              </div>
+                    </div>
             ))}
           </Slider>
-        </div>
+       
       </motion.div>
     </section>
   );

@@ -83,240 +83,254 @@ const ContactForm = (props: Props) => {
     });
   };
   return (
-    <div className="overflow-auto">
+    <div className="overflow-auto ">
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 border p-6 bg-white "
-        >
-          <FormError message={error} />
-          <FormSuccess message={success} />
-          <p className="my-4 text-xs  text-gray-500">
-            Deixe a sua mensagem aqui e nós lhe vamos responder em menos de 2
-            horas.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 overflow-x-hidden">
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">Nome</span>{" "}
-                      <span className="text-red-500">*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        disabled={isPending}
-                        {...field}
-                        placeholder="O seu nome"
-                        type="text"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">Email</span>{" "}
-                      <span className="text-red-500">*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        disabled={isPending}
-                        {...field}
-                        placeholder="O seu email"
-                        type="text"
-                      />
-                    </FormControl>
-                    {/* <FormDescription>
-                                Please enter your name
-                            </FormDescription> */}
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between gap-4">
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="companyName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">Nome da Empresa</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        disabled={isPending}
-                        {...field}
-                        placeholder="O nome da sua empresa"
-                        type="text"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="companyWebsite"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">Website da empresa</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        disabled={isPending}
-                        {...field}
-                        placeholder="O website da sua empresa"
-                        type="text"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between gap-4 overflow-x-hidden">
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">Número de Telefone</span>{" "}
-                      <span className="text-red-500">*</span>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        disabled={isPending}
-                        {...field}
-                        placeholder="O seu número de telefone"
-                        type="number"
-                      />
-                    </FormControl>
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="service"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>
-                      <span className="text-black">O Tipo de Serviço</span>{" "}
-                      <span className="text-red-500">*</span>
-                    </FormLabel>
-                    <Select onValueChange={field.onChange} disabled={isPending}>
-                      <FormControl className="w-full">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selecione o tipo de serviço" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="web-development" className="py-2">
-                          Desenvolvimento web
-                        </SelectItem>
-                        <SelectItem value="mobile-development" className="py-2">
-                          Desenvolvimento app. móveis
-                        </SelectItem>
-                        <SelectItem value="it-consulting" className="py-2">
-                          Consultoria informática
-                        </SelectItem>
-                        <SelectItem value="other" className="py-2">
-                          Outros serviços
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-[10px]" />
-                  </FormItem>
-                )}
-              />
-            </div>
-          </div>
-
-          <div className="w-full">
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>
-                    <span className="text-black">Como podemos ajudar?</span>{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea
-                      disabled={isPending}
-                      {...field}
-                      placeholder="Deixe a sua mensagem aqui..."
-                      rows={5}
-                    />
-                  </FormControl>
-                  {/* <FormDescription>
-                                Please enter your name
-                            </FormDescription> */}
-                  <FormMessage className="text-[10px]" />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="isSubscribed"
-              render={({ field }) => (
-                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4">
-                  <FormControl>
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                      disabled={isPending}
-                    />
-                  </FormControl>
-                  <div className="space-y-1 leading-none">
-                    <FormLabel className="text-xs">
-                      Pretende receber notificações sobre novos projectos e
-                      serviços da TECMOZA?
-                    </FormLabel>
-                    {/* <FormDescription>
-
-                      </FormDescription> */}
-                  </div>
-                </FormItem>
-              )}
-            />
-          </div>
-          <FormError message={error} />
-          <FormSuccess message={success} />
-          <Button
-            disabled={isPending}
-            type="submit"
-            className="flex gap-3 w-full bg-sky-500"
+        <div className="space-y-6 shadow-md p-6 border border-gray-400 rounded-md bg-gray-50 dark:bg-gray-900 ">
+          <form onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-6 "
           >
-            Enviar
-          </Button>
-        </form>
+            <FormError message={error} />
+            <FormSuccess message={success} />
+            <p className="my-4 text-xs  text-gray-500">
+              Deixe a sua mensagem aqui e nós lhe vamos responder em menos de 2
+              horas.
+            </p>
+            <div className="flex flex-col md:flex-row gap-4 overflow-x-hidden">
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">Nome</span>{" "}
+                        <span className="text-red-500">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={isPending}
+                          {...field}
+                          placeholder="O seu nome"
+                          type="text"
+                          className="text-gray-600 rounded-xl border "
+                        />
+                      </FormControl>
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">Email</span>{" "}
+                        <span className="text-red-500">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={isPending}
+                          {...field}
+                          placeholder="O seu email"
+                          type="text"
+                          className="text-gray-600 rounded-xl border "
+                        />
+                      </FormControl>
+                      {/* <FormDescription>
+                                Please enter your name
+                              </FormDescription> */}
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-between gap-4">
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="companyName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">Nome da Empresa</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={isPending}
+                          {...field}
+                          placeholder="O nome da sua empresa"
+                          type="text"
+                          className="text-gray-600 rounded-xl border "
+                        />
+                      </FormControl>
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="companyWebsite"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">Website da empresa</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={isPending}
+                          {...field}
+                          placeholder="O website da sua empresa"
+                          type="text"
+                          className="text-gray-600 rounded-xl border "
+                        />
+                      </FormControl>
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-between gap-4 overflow-x-hidden">
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">Número de Telefone</span>{" "}
+                        <span className="text-red-500">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          disabled={isPending}
+                          {...field}
+                          placeholder="O seu número de telefone"
+                          type="number"
+                          className="text-gray-600 rounded-xl border "
+                        />
+                      </FormControl>
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="w-full">
+                <FormField
+                  control={form.control}
+                  name="service"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        <span className="">O Tipo de Serviço</span>{" "}
+                        <span className="text-red-500">*</span>
+                      </FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        disabled={isPending}
+                      >
+                        <FormControl className="w-full">
+                          <SelectTrigger className="text-gray-600 rounded-xl border">
+                            <SelectValue placeholder="Selecione o tipo de serviço" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="web-development" className="py-2">
+                            Desenvolvimento web
+                          </SelectItem>
+                          <SelectItem
+                            value="mobile-development"
+                            className="py-2"
+                          >
+                            Desenvolvimento app. móveis
+                          </SelectItem>
+                          <SelectItem value="it-consulting" className="py-2">
+                            Consultoria informática
+                          </SelectItem>
+                          <SelectItem value="other" className="py-2">
+                            Outros serviços
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage className="text-[10px]" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
+
+            <div className="w-full">
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      <span className="">Como podemos ajudar?</span>{" "}
+                      <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Textarea
+                        disabled={isPending}
+                        {...field}
+                        placeholder="Deixe a sua mensagem aqui..."
+                        rows={5}
+                        className="text-gray-600 rounded-xl border"
+                      />
+                    </FormControl>
+                    {/* <FormDescription>
+                                Please enter your name
+                            </FormDescription> */}
+                    <FormMessage className="text-[10px]" />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="isSubscribed"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        disabled={isPending}
+                        className="text-gray-600 border"
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel className="text-xs">
+                        Pretende receber notificações sobre novos projectos e
+                        serviços da TECMOZA?
+                      </FormLabel>
+                      {/* <FormDescription>
+
+</FormDescription> */}
+                    </div>
+                  </FormItem>
+                )}
+              />
+            </div>
+            <FormError message={error} />
+            <FormSuccess message={success} />
+            <Button
+              disabled={isPending}
+              type="submit"
+              className="flex gap-3 w-full bg-sky-500"
+            >
+              Enviar
+            </Button>
+          </form>
+        </div>
       </Form>
     </div>
   );

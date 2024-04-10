@@ -15,7 +15,7 @@ const serviceImage = [
     descriptionBlockAnimation: { x: 200 },
     title: "Aplicativos Móveis - Android e iOS",
     subtitle: "Desenvolvimento",
-    bgColor: "bg-white",
+    bgColor: "dark:bg-gray-900 bg-white",
     blocksOrder: "",
     description:
       "Desenvolvemos aplicativos móveis para Android e iPhone.",
@@ -51,7 +51,7 @@ const serviceImage = [
     descriptionBlockAnimation: { x: 200 },
     title: "Consultoria Informática",
     subtitle: "Consultoria",
-    bgColor: "bg-white",
+    bgColor: "dark:bg-gray-900 bg-white",
     blocksOrder: "",
     description:
       "Informatizamos modelos e processos de negócios das empresas.",

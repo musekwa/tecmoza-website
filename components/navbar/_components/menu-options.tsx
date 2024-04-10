@@ -70,8 +70,8 @@ export const NavigationMenuBar = ({
                       height="15"
                       viewBox="0 0 20 20"
                       className={clsx(
-                        "",
-                        activeMenu === menu && "fill-sky-500"
+                        "dark:fill-white",
+                        activeMenu === menu && "fill-sky-500 dark:fill-sky-500"
                       )}
                     >
                       <path d="M0 7 L 20 7 L 10 16" />

@@ -37,13 +37,13 @@ export default async function LandingPage({
       <div className="px-4 lg:px-24  my-6 py-6 ">
         <FirstSection />
       </div>
-      <div className="px-4 lg:px-24 bg-sky-100 my-6 py-6 ">
+      <div className="px-4 lg:px-24 bg-sky-100 dark:bg-gray-900 my-6 py-6 ">
         <SecondSection />
       </div>
       <div className="px-4 lg:px-24  ">
         <ThirdSection />
       </div>
-      <div className="px-4 lg:px-24  ">
+      <div className="px-4 lg:px-24 dark:bg-gray-900 py-6 ">
         <FourthSection />
       </div>
 

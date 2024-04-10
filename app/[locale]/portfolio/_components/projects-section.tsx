@@ -49,7 +49,7 @@ const ProjectsSection = (props: Props) => {
               className=" group-hover:scale-90 duration-300 transition-all ease-in-out"
             />
             <div className="py-6 ">
-              <div className="flex flex-wrap gap-2  md:gap-6 justify-around text-[14px] text-black">
+              <div className="flex flex-wrap gap-2  md:gap-6 justify-around text-[14px] text-black dark:text-gray-400">
                 {project.activities.split(",").map((activity, index) => (
                   <div key={index}>{activity}</div>
                 ))}
@@ -59,7 +59,7 @@ const ProjectsSection = (props: Props) => {
                 <Chip key={index} className="text-gray-500 bg-slate-200 text-[12px]">{technology}</Chip>
                 ))}
               </div>
-              <h1 className="text-xl lg:text-2xl text-black font-semibold group-hover:text-sky-500">
+              <h1 className="text-xl lg:text-2xl text-black dark:text-white font-semibold group-hover:text-sky-500">
                 {project.name} - {project.shortDescription}
               </h1>
             </div>

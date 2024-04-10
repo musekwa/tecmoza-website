@@ -13,7 +13,7 @@ const Logo = React.forwardRef(({}, ref: any) => {
   return (
     <div ref={ref} className="flex justify-center items-center">
       <Image
-        src="/images/logos/logo.jpeg"
+        src="/logo.png"
         alt="logo tecmoza"
         width={45}
         height={45}

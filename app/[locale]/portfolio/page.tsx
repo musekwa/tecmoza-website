@@ -49,10 +49,10 @@ const PortfolioPage = (props: Props) => {
           className="absolute top-0 left-0 w-full h-full"
         >
           <div className=" flex flex-col h-full  items-center justify-center gap-10 px-6 lg:px-24 ">
-            <h1 className="text-3xl lg:text-5xl font-bold text-sky-900">
+            <h1 className="text-3xl lg:text-5xl font-bold text-sky-900 dark:text-white">
               Alguns Casos De Trabalhos Já Realizados
             </h1>
-            <p className="text-2xl max-w-[800px] text-center font-semibold text-black">
+            <p className="text-2xl max-w-[800px] text-center font-semibold text-black dark:text-gray-400">
               Acreditamos que os grandes produtos não acontecem sem paixão,
               inteligência e empenho pessoal, e isso é demonstrado pelo nosso
               portfolio que destaca alguns casos de trabalhos já realizados.
@@ -61,7 +61,7 @@ const PortfolioPage = (props: Props) => {
         </motion.div>
       </div>
 
-      <div className="bg-white  py-6">
+      <div className="bg-white dark:bg-black  py-6">
         <ProjectsSection />
       </div>
     </div>
