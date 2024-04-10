@@ -82,7 +82,7 @@ const slickItems = [
   },
   {
     title: "PostgreSQL",
-    image: "/images/postgreSqlLogo.jpg",
+    image: "/images/postgreSqlLogo.png",
   },
   {
     title: "Convex",
@@ -131,7 +131,7 @@ const FourthSection = (props: Props) => {
             {slickItems.map((item, index) => (
               <div key={index} className="container m-auto">
 
-                <div key={index} className="flex flex-col justify-center items-center shadow-md border border-gray-300 dark:border-gray-700 h-32 w-32 bg-white dark:bg-black rounded-md">
+                <div key={index} className="flex flex-col justify-center items-center  border-gray-300 dark:border-gray-700 h-32 w-32 bg-white dark:bg-gray-900 rounded-md">
                   <Image
                     width={55}
                     height={55}
