@@ -1,15 +1,10 @@
 "use server";
-import * as z from "zod";
-import { Schema } from "mongoose";
 import db from "../lib/db";
-import { contactFormSchema } from "@/index";
 import NewsSubscriber from "../models/newsSubscriber";
 
 interface Props {
-
   email: string;
   name: string;
-
 }
 
 export const subscribeAction = async (data: Props) => {

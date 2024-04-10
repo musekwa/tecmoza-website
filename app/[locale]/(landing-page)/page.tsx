@@ -1,13 +1,11 @@
 "use client"
 import GetInTouch from "@/get-in-touch";
-import { Button } from "@/ui/button";
 import FirstSection from "./_components/first-section";
 import FourthSection from "./_components/fourth-section";
 import SecondSection from "./_components/second-section";
 import ThirdSection from "./_components/third-section";
 import initTranslations from '../../i18n'
 import  TranslationsProvider  from '@/TranslationsProvider'
-import LanguageChanger from "@/components/LanguageChanger";
 
 type Props = {
   params: {

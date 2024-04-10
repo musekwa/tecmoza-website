@@ -1,19 +1,12 @@
 "use client";
-
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import React, { MutableRefObject, useRef } from "react";
-import Marquee from "react-fast-marquee";
+import React from "react";
 import Slider from "react-slick";
-import SecondSection from "./second-section";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import OurClientSection from "@/our-clients-section";
-import { cn } from "../../../../lib/utils";
 import { Button } from "@/ui/button";
-import VideoBackground from "@/video-background";
-import { useTranslation } from "react-i18next";
 
 const settings = {
   dots: false,
@@ -78,11 +71,9 @@ const FirstSection = (props: Props) => {
     threshold: 0.5,
     triggerOnce: false,
   });
-  // const { t } = useTranslation();
 
   return (
     <section>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <motion.div
           ref={ref}
@@ -118,15 +109,10 @@ const FirstSection = (props: Props) => {
           <div className="w-[200px] h-1 bg-yellow-500 my-2" />
         </motion.div>
 
-        <Slider
-          // ref={(slider) => (sliderRef = slider)}
-          {...settings}
-          className=" w-full h-full"
-        >
+        <Slider {...settings} className=" w-full h-full">
           {slickItems.map((item, index) => (
             <div key={index} className="relative rounded-md w-full h-full">
               <video
-                // ref={videoRef}
                 autoPlay
                 muted
                 loop
