@@ -37,7 +37,7 @@ const VisionSection = (props: Props) => {
           </div>
           <div className="">
          
-            <p className="sm:text-[14px] lg:text-[16px] text-justify text-gray-500 py-4">
+            <p className="sm:text-[14px] lg:text-[16px] text-justify text-gray-600 py-4">
               Tornar a TECMOZA o <b>líder</b> em <b>soluções tecnológicas</b>{" "}
               inovadoras em Moçambique, impulsionando a{" "}
               <b>transformação digital</b> e contribuindo para o{" "}
@@ -57,7 +57,7 @@ const VisionSection = (props: Props) => {
           </div>
 
           <div>
-            <p className="sm:text-[14px] lg:text-[16px] text-justify text-gray-500 py-4">
+            <p className="sm:text-[14px] lg:text-[16px] text-justify text-gray-600 py-4">
             &rarr;
               Oferecer soluções digitais de excelência, personalizadas às
               necessidades de nossos clientes, através de uma equipe altamente

@@ -129,7 +129,7 @@ const UserSubscriptionForm = ({ isDialogOpen, setIsDialogOpen  }: Props) => {
           <Button
             disabled={isPending || !!success}
             type="submit"
-            className="flex gap-3 w-full bg-sky-500"
+            className="flex gap-3 w-full bg-sky-500 hover:bg-sky-800 text-white rounded-xl"
           >
             {
               isPending && <svg

@@ -130,7 +130,7 @@ const OurValuesSection = (props: Props) => {
                   </h1>
                 </div>
                 <div className="p-3 mt-2">
-                  <p className="text-[13px] text-justify  text-gray-400">
+                  <p className="text-[13px] text-justify  text-gray-600">
                     {item.description}
                   </p>
                 </div>

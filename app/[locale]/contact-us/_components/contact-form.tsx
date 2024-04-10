@@ -31,6 +31,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/ui/form";
+import { Loader2 } from "lucide-react";
 
 type Props = {};
 
@@ -242,20 +243,20 @@ const ContactForm = (props: Props) => {
                             <SelectValue placeholder="Selecione o tipo de serviço" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="web-development" className="py-2">
+                        <SelectContent className="bg-white dark:bg-gray-900 text-gray-600 rounded-xl">
+                          <SelectItem value="web-development" className="py-2 cursor-pointer">
                             Desenvolvimento web
                           </SelectItem>
                           <SelectItem
                             value="mobile-development"
-                            className="py-2"
+                            className="py-2 cursor-pointer"
                           >
-                            Desenvolvimento app. móveis
+                            Desenvolvimento apl. móveis
                           </SelectItem>
-                          <SelectItem value="it-consulting" className="py-2">
+                          <SelectItem value="it-consulting" className="py-2 cursor-pointer">
                             Consultoria informática
                           </SelectItem>
-                          <SelectItem value="other" className="py-2">
+                          <SelectItem value="other" className="py-2 cursor-pointer">
                             Outros serviços
                           </SelectItem>
                         </SelectContent>
@@ -325,8 +326,9 @@ const ContactForm = (props: Props) => {
             <Button
               disabled={isPending}
               type="submit"
-              className="flex gap-3 w-full bg-sky-500"
+              className="flex gap-3 w-full bg-sky-500 hover:bg-sky-800 text-white rounded-xl"
             >
+              {isPending && <Loader2 className="animate-spin h-5 w-5" />}
               Enviar
             </Button>
           </form>

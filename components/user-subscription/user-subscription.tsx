@@ -59,7 +59,7 @@ const UserSubscription = ({}: Props) => {
         <DialogContent className="bg-white dark:bg-gray-900">
           <DialogHeader>
             <DialogTitle className="mb-2">
-              <h1 className="text-center text-3xl font-bold">Subscrever</h1>
+              <h1 className="text-center text-3xl font-bold ">Subscrever</h1>
             </DialogTitle>
             <DialogDescription>
               <UserSubscriptionForm

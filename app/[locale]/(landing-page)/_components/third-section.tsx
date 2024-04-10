@@ -94,12 +94,12 @@ const ThirdSection = (props: Props) => {
               </span>
             </h1>
 
-            <p className="text-justify text-sm leading-6 ">
+            <p className="text-justify text-sm leading-6 text-gray-600">
               {service.descriprion}
             </p>
 
             <div className="absolute bottom-0 right-0 bg-sky-500 hover:bg-sky-600 p-1 rounded-br-md rounded-tl-md cursor-pointer hover:animate-pulse hover:scale-110 transition-all duration-300 text-white ">
-              <Link href={"/services/mobile"} className="">
+              <Link href={"/services"} className="">
                 <div className="flex gap-2 text-xs items-center">
                   Saiba mais
                   <ArrowRight className="text-white w-6 h-6" />

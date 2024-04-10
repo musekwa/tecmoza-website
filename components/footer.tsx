@@ -98,9 +98,9 @@ const Footer = (props: Props) => {
           <li>
             <Link href={"/services"}>- Nossos Serviços</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/blog"}>- Blog</Link>
-          </li>
+          </li> */}
           <li>
             <Link href={"/contact-us"}>- Fale Connosco</Link>
           </li>
