@@ -32,8 +32,8 @@ const UserSubscription = ({}: Props) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <div className="md:flex items-center space-y-2 ">
-    <p className="text-[12px] mr-4">
+    <div className=" space-y-2 ">
+    <p className="text-sm font-normal">
       Subscreva à nossa e-newsLetter
     </p>
       <Dialog
@@ -49,7 +49,7 @@ const UserSubscription = ({}: Props) => {
 
           <Button
             variant="solid"
-            className="text-white md:text-[16px] bg-sky-900"
+            className="text-white md:text-[16px] bg-sky-900 w-full"
           >
             Subscrever
           </Button>
