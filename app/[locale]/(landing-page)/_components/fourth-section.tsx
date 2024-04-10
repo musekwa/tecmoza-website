@@ -129,7 +129,7 @@ const FourthSection = (props: Props) => {
             {...settings}
           >
             {slickItems.map((item, index) => (
-              <div className="container m-auto">
+              <div key={index} className="container m-auto">
 
                 <div key={index} className="flex flex-col justify-center items-center shadow-md border border-gray-300 dark:border-gray-700 h-32 w-32 bg-white dark:bg-black rounded-md">
                   <Image
