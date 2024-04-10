@@ -25,7 +25,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="max-w-2/3 min-w-1/2 bg-white py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
+    <div className="max-w-2/3 min-w-1/2 bg-white dark:bg-gray-900 py-5 px-10 items-center justify-center absolute top-20 right-0 lg:hidden">
       <Accordion
         className="pl-2 text-lg"
         type="single"
@@ -38,7 +38,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
             return (
               <AccordionItem
                 key={item.title}
-                className="my-6 border-b hover:bg-gray-100 rounded-md"
+                className="my-6  hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
                 value={item.menu}
               >
                 <AccordionTrigger className="px-2">
@@ -47,15 +47,11 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                       onClick={handleLinkClick}
                       href={item.href}
                       className="
-   
                       font-medium
                       py-4
                       px-2
                       my-6
-                      border-b
-                      cursor-pointer
-                      hover:bg-gray-100
-                      hover:underline
+                      cursor-pointer                    
                       rounded-md
                       "
                     >
@@ -72,7 +68,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                         className="pl-6"
                         onClick={handleLinkClick}
                       >
-                        <div className="flex py-2 gap-6 pl-8 cursor-pointer hover:bg-gray-200 rounded-md">
+                        <div className="flex py-2 gap-6 pl-8 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900 rounded-md">
                           <div>{option.icon}</div>
                           <div>{option.label}</div>
                         </div>
@@ -100,6 +96,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 border-b
                 cursor-pointer
                 hover:bg-gray-100
+                dark:hover:bg-gray-700
                 hover:underline
                 rounded-md
                 "

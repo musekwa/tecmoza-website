@@ -60,15 +60,15 @@ const ActionButtons = ({
             onClick={toggleDropdown}
             className="bg-sky-500 p-3 rounded-full lg:hidden cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-md hover:bg-sky-900 hover:shadow-sky-900"
           >
-            <X className="h-6 w-6 text-[#eff0ff] items-center justify-center rounded-full" />
+            <X className="h-6 w-6 text-white items-center justify-center rounded-full" />
           </div>
         )}
         {!dropdownVisible && (
           <div
             onClick={toggleDropdown}
-            className="bg-[#eff0ff] p-3 rounded-full lg:hidden cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-md hover:bg-sky-900 hover:shadow-sky-900"
+            className="bg-sky-500 p-3 rounded-full lg:hidden cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-md hover:bg-sky-900 hover:shadow-sky-900"
           >
-            <AlignJustify className="h-6 w-6 text-sky-500 items-center justify-center rounded-full" />
+            <AlignJustify className="h-6 w-6 text-white items-center justify-center rounded-full" />
           </div>
          )}
       </div>
