@@ -72,7 +72,7 @@ const Footer = (props: Props) => {
                 <FaYoutube size={20} className="cursor-pointer" />
               </Link>
               <Link
-                href={"https://www.facebook.com/tecmoza.lda"}
+                href={"https://www.facebook.com/tecmoza"}
                 target="_blank"
                 rel="noopener noreferrer"
               >

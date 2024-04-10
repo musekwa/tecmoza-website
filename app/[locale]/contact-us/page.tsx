@@ -53,7 +53,7 @@ const SendMessagePage = (props: Props) => {
             >
               <FaYoutube size={24} className="text-sky-900 cursor-pointer" />
             </Link>
-            <Link href={"https://www.facebook.com/tecmoza.lda"} target="_blank" rel="noopener noreferrer">
+            <Link href={"https://www.facebook.com/tecmoza"} target="_blank" rel="noopener noreferrer">
               <FaFacebook size={24} className="text-sky-900 cursor-pointer" />
             </Link>
             <Link href={"https://twitter.com/tecmoza2"} target="_blank" rel="noopener noreferrer">
