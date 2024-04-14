@@ -15,6 +15,7 @@ import { MenuItem, MenuOptionsProps } from "./types";
 import { NavigationMenuBar } from "./_components/menu-options";
 import ActionButtons from "./_components/action-buttons";
 import { ModeToggle } from "../mode-toggle";
+import { ProgressBar, ProgressBarLink } from "../progress-bar";
 
 export const menuItems: MenuItem[] = [
   {
@@ -97,7 +98,6 @@ const Navbar = (props: Props) => {
   // const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuOptions, setMenuOptions] = useState<MenuOptionsProps | null>(null);
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  
 
   const handleMouseEnter = (menuOptions: MenuOptionsProps) => {
     // setActiveMenu(menu);
@@ -125,83 +125,85 @@ const Navbar = (props: Props) => {
   };
 
   return (
-    <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 ">
-      <div className="flex items-center justify-between px-4 py-5 shadow-sm lg:px-24 h-24">
-        <div
-          onMouseOver={handleMouseLeave}
-          className="hover:scale-110 transition-all duration-300 hover:shadow-md               
+    <ProgressBar className="">
+      <div className="sticky top-0 z-50 bg-white dark:bg-slate-900 ">
+        <div className="flex items-center justify-between px-4 py-5 shadow-sm lg:px-24 h-24">
+          <div
+            onMouseOver={handleMouseLeave}
+            className="hover:scale-110 transition-all duration-300 hover:shadow-md               
           hover:shadow-sky-900 border rounded-md border-sky-500 p-0.5 cursor-pointer "
-        >
-          <Link href={"/"}>
-            <Logo />
-          </Link>
-        </div>
-        <ModeToggle />
-        <div className="flex">
-          <NavigationMenuBar
-            setMenuOptions={setMenuOptions}
-            dropdownVisible={dropdownVisible}
-            setDropdownVisible={setDropdownVisible}
-          />
-          <div onMouseEnter={handleMouseLeave} className="flex items-center">
-            <ActionButtons
+          >
+            <ProgressBarLink href={"/"}>
+              <Logo />
+            </ProgressBarLink>
+          </div>
+          <ModeToggle />
+          <div className="flex">
+            <NavigationMenuBar
+              setMenuOptions={setMenuOptions}
               dropdownVisible={dropdownVisible}
               setDropdownVisible={setDropdownVisible}
             />
+            <div onMouseEnter={handleMouseLeave} className="flex items-center">
+              <ActionButtons
+                dropdownVisible={dropdownVisible}
+                setDropdownVisible={setDropdownVisible}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      {menuOptions?.active && menuOptions.options.length > 0 && (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          exit={"hidden"}
-          transition={{
-            duration: 0.7,
-            ease: "easeInOut",
-            when: "afterChildren",
-            staggerChildren: 0.2,
-          }}
-          variants={slideVariants}
-          className="absolute top-24 left-0 right-0 z-50 bg-white dark:bg-slate-900 dark:border-none"
-        >
-          <div
-            onMouseLeave={handleMouseLeave}
-            onMouseOver={() => handleMouseOver(menuOptions)}
-            className="flex flex-row px-24 py-6 min-h-40 border z-50 justify-between items-start gap-4"
+        {menuOptions?.active && menuOptions.options.length > 0 && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit={"hidden"}
+            transition={{
+              duration: 0.7,
+              ease: "easeInOut",
+              when: "afterChildren",
+              staggerChildren: 0.2,
+            }}
+            variants={slideVariants}
+            className="absolute top-24 left-0 right-0 z-50 bg-white dark:bg-slate-900 dark:border-none"
           >
-            <div className="w-[400px] ">
-              <p className="text-sm underline text-yellow-500">
-                {menuOptions.title}
-              </p>
-            </div>
-            <div className="grid grid-cols-2  gap-6 w-1/2">
-              {menuOptions?.options.map((option, index) => (
-                <Link
-                  href={option.href}
-                  key={index}
-                  className="flex items-center"
-                >
-                  <div className="cursor-pointer hover:bg-gray-100 p-2 rounded-md">
-                    <div className="flex gap-4 justify-center items-center">
-                      <div>{option.icon}</div>
-                      <div className="flex flex-col">
-                        <div className="text-[16px] font-semibold">
-                          {option.label.split(" - ")[1]}
-                        </div>
-                        <div className="text-[10px] italic">
-                          {option.label.split(" - ")[0]}
+            <div
+              onMouseLeave={handleMouseLeave}
+              onMouseOver={() => handleMouseOver(menuOptions)}
+              className="flex flex-row px-24 py-6 min-h-40 border z-50 justify-between items-start gap-4"
+            >
+              <div className="w-[400px] ">
+                <p className="text-sm underline text-yellow-500">
+                  {menuOptions.title}
+                </p>
+              </div>
+              <div className="grid grid-cols-2  gap-6 w-1/2">
+                {menuOptions?.options.map((option, index) => (
+                  <ProgressBarLink
+                    href={option.href}
+                    key={index}
+                    className="flex items-center"
+                  >
+                    <div className="cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+                      <div className="flex gap-4 justify-center items-center">
+                        <div>{option.icon}</div>
+                        <div className="flex flex-col">
+                          <div className="text-[16px] font-semibold">
+                            {option.label.split(" - ")[1]}
+                          </div>
+                          <div className="text-[10px] italic">
+                            {option.label.split(" - ")[0]}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </ProgressBarLink>
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </div>
+          </motion.div>
+        )}
+      </div>
+    </ProgressBar>
   );
 };
 

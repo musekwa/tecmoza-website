@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { menuItems } from "../navbar";
 import Link from "next/link";
+import { ProgressBarLink } from "@/components/progress-bar";
 // import { useTranslation } from "react-i18next";
 
 type NavigationMenuBarProps = {
@@ -47,7 +48,7 @@ export const NavigationMenuBar = ({
       >
         <div className="flex items-center">
           <div>
-            <Link href={href}>
+            <ProgressBarLink href={href}>
               <div className="flex items-center hover:border-b-2 hover:border-sky-500 h-12">
                 <div
                   className="w-max mx-1 "
@@ -79,7 +80,7 @@ export const NavigationMenuBar = ({
                   </motion.div>
                 )}
               </div>
-            </Link>
+            </ProgressBarLink>
           </div>
         </div>
       </div>

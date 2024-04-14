@@ -13,6 +13,7 @@ import {
   AccordionItem,
 } from "../../ui/accordion";
 import LanguageChanger from "@/components/LanguageChanger";
+import { ProgressBarLink } from "@/components/progress-bar";
 
 interface DropdownMenuProps {
   onClose: () => void;
@@ -43,7 +44,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
               >
                 <AccordionTrigger className="px-2">
                   <div>
-                    <Link
+                    <ProgressBarLink
                       onClick={handleLinkClick}
                       href={item.href}
                       className="
@@ -56,13 +57,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                       "
                     >
                       {item.title}
-                    </Link>
+                    </ProgressBarLink>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.options.map((option) => {
                     return (
-                      <Link
+                      <ProgressBarLink
                         key={option.label}
                         href={option.href}
                         className="pl-6"
@@ -72,7 +73,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                           <div>{option.icon}</div>
                           <div>{option.label}</div>
                         </div>
-                      </Link>
+                      </ProgressBarLink>
                     );
                   })}
                 </AccordionContent>
@@ -80,7 +81,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
             );
           } else {
             return (
-              <Link
+              <ProgressBarLink
                 onClick={handleLinkClick}
                 key={item.title}
                 href={item.href}
@@ -105,14 +106,14 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 <div>
                   <ArrowRight className="h-3.5 w-5 " />
                 </div>
-              </Link>
+              </ProgressBarLink>
             );
           }
         })}
       </Accordion>
       <div className="lg:pt-32">
         <div className="flex items-center justify-center space-x-4">
-          <Link href={"/contact-us"}>
+          <ProgressBarLink href={"/contact-us"}>
             <Button
               className="
               text-white
@@ -131,7 +132,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
             >
               Contacte-Nos
             </Button>
-          </Link>
+          </ProgressBarLink>
         </div>
       </div>
     </div>

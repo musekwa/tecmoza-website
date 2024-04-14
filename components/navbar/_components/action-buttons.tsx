@@ -4,6 +4,7 @@ import { X, AlignJustify } from "lucide-react";
 import Link from "next/link";
 import DropdownMenu from "./dropdown-menu";
 import { Button } from "../../ui/button";
+import { ProgressBarLink } from "@/components/progress-bar";
 
 type ActionButtonsProps = {
   dropdownVisible: boolean;
@@ -28,7 +29,7 @@ const ActionButtons = ({
 
       <div className="flex lg:space-x-4 items-center">
 
-        <Link href={"/contact-us"}>
+        <ProgressBarLink href={"/contact-us"}>
           <Button
             className="
             hidden
@@ -52,7 +53,7 @@ const ActionButtons = ({
           >
             Contacte-Nos
           </Button>
-        </Link>
+        </ProgressBarLink>
       </div>
       <div className="">
         {dropdownVisible && (
