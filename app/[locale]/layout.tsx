@@ -25,7 +25,7 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "TECMOZA | Equipe de Desenvolvedores de Software",
+  title: "TECMOZA - Desenvolvedores de Software",
   description:
     "TECMOZA desenvolverá soluções digitais de qualidade para sua empresa.",
 };
