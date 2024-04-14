@@ -33,7 +33,7 @@ export const Welcome = ({
 }: WelcomeProps) => (
   <Html>
     <Head />
-    <Preview>Client Contact</Preview>
+    <Preview>{`Sr. ${name} contactou a TECMOZA`}</Preview>
     <Tailwind
       config={{
         theme: {
