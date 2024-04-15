@@ -4,14 +4,14 @@ type Props = {};
 
 const PrivacyPolicyPage = (props: Props) => {
   return (
-    <div className="h-full px-6 py-16 lg:px-24 space-y-6 text-[18px] bg-white">
-      <div className="h-[200px] bg-gray-200 flex flex-col justify-center">
+    <div className="h-full px-6 py-16 lg:px-24 space-y-6 text-[18px] ">
+      <div className="h-[200px] flex flex-col justify-center">
         <h1 className="text-xl lg:text-3xl font-bold">
           Política de Privacidade & Termos de Uso
         </h1>
         <div className="w-[200px] h-1 bg-yellow-500 my-2" />
       </div>
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Política de Privacidade
       </h1>
     
@@ -25,7 +25,7 @@ const PrivacyPolicyPage = (props: Props) => {
         nossos serviços. Também coletamos automaticamente certas informações
         técnicas quando você visita nosso website.
       </p>
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Uso das Informações
       </h1>
     
@@ -34,7 +34,7 @@ const PrivacyPolicyPage = (props: Props) => {
         serviços, processar solicitações, enviar comunicações de marketing e
         cumprir obrigações legais.
       </p>
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Divulgação das Informações
       </h1>
       
@@ -49,7 +49,7 @@ const PrivacyPolicyPage = (props: Props) => {
         direito de modificar estes Termos a qualquer momento.
       </p>
 
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Divulgação de Informações
       </h1>
      
@@ -59,7 +59,7 @@ const PrivacyPolicyPage = (props: Props) => {
         ilegal ou inadequado.
       </p>
 
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Propriedade Intelectual
       </h1>
      
@@ -70,7 +70,7 @@ const PrivacyPolicyPage = (props: Props) => {
         propriedade intelectual.
       </p>
 
-      <h1 className="text-lg lg:text-xl font-bold text-sky-900">
+      <h1 className="text-lg lg:text-xl font-bold ">
         Limitação de Responsabilidade
       </h1>
      
