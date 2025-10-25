@@ -5,24 +5,19 @@ import { Providers } from "./providers";
 import { Toaster as SonnerToast } from "sonner";
 import Navbar from "@/navbar/navbar";
 import Footer from "@/footer";
-import i18nConfig from '@/i18nConfig';
-import { dir } from 'i18next';
+import i18nConfig from "@/i18nConfig";
+import { dir } from "i18next";
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
-export const fonts = Poppins({
+const fonts = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-export const raleway = Raleway({
+const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
 
 export const metadata: Metadata = {
   title: "TECMOZA - Desenvolvedores de Software",
@@ -31,20 +26,19 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return i18nConfig.locales.map(locale => ({ locale }));
+  return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  // params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
   return (
-    <html 
-    // lang={locale} dir={dir(locale)}
-    >
+    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={fonts.className}>
         <Providers>
           <Navbar />

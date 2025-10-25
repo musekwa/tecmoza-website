@@ -16,7 +16,6 @@ import Link from "next/link";
 import { Form } from "./ui/form";
 import { Input } from "./ui/input";
 import UserSubscription from "./user-subscription/user-subscription";
-import { useDisclosure } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 
 type Props = {};
@@ -43,7 +42,7 @@ const Footer = (props: Props) => {
             <div className="flex flex-row items-center gap-2">
               <Mail size={16} />
               <div>
-                <p>musekwa@tecmoza.com</p>
+                <p>tecmoza@tecmoza.com</p>
               </div>
             </div>
             <div className="w-fit flex flex-row items-start gap-2 ">
@@ -107,9 +106,8 @@ const Footer = (props: Props) => {
         </ul>
 
         <div className="h-0.5 w-24 bg-white my-6 lg:hidden" />
-      
+
         <UserSubscription />
-     
       </div>
 
       <div className="h-0.5 w-full bg-gray-200 mt-4 mb-2" />

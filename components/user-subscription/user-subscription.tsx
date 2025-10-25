@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Copy } from "lucide-react";
 
-// import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -15,15 +15,6 @@ import {
 } from "@/components/ui/dialog";
 
 import UserSubscriptionForm from "./user-subscription-form";
-import {
-  Button,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  useDisclosure,
-} from "@nextui-org/react";
 
 type Props = {};
 
@@ -33,41 +24,33 @@ const UserSubscription = ({}: Props) => {
 
   return (
     <div className=" space-y-2 ">
-    <p className="text-sm font-normal">
-      Subscreva à nossa e-newsLetter
-    </p>
+      <p className="text-sm font-normal">Subscreva à nossa e-newsLetter</p>
       <Dialog
         open={isDialogOpen}
         onOpenChange={(open) => {
           setIsDialogOpen(open);
         }}
-        
-
       >
         <DialogTrigger asChild>
-          {/* <div className="flex flex-col-reverse md:flex-row-reverse gap-1 md:gap-4 justify-between items-center"> */}
-
-          <Button
-            variant="solid"
-            className="text-white md:text-[16px] bg-sky-900 w-full"
-          >
+          <Button className="text-white md:text-[16px] bg-sky-900 hover:bg-sky-800 w-full">
             Subscrever
           </Button>
-
-          {/* </div> */}
         </DialogTrigger>
         <DialogContent className="bg-white dark:bg-gray-900">
           <DialogHeader>
-            <DialogTitle className="mb-2">
-              <h1 className="text-center text-3xl font-bold ">Subscrever</h1>
+            <DialogTitle className="mb-2 text-center text-3xl font-bold">
+              Subscrever
             </DialogTitle>
-            <DialogDescription>
-              <UserSubscriptionForm
-                isDialogOpen={isDialogOpen}
-                setIsDialogOpen={setIsDialogOpen}
-              />
+            <DialogDescription className="sr-only">
+              Preencha o formulário abaixo para se inscrever na nossa newsletter
             </DialogDescription>
           </DialogHeader>
+          <div>
+            <UserSubscriptionForm
+              isDialogOpen={isDialogOpen}
+              setIsDialogOpen={setIsDialogOpen}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </div>

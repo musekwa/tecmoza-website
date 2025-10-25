@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Logo from "../logo";
 
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+import "flag-icons/css/flag-icons.min.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {

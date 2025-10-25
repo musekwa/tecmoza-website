@@ -22,6 +22,7 @@ interface DropdownMenuProps {
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
   const [accordionValue, setAccordionValue] = useState<string | undefined>();
   const handleLinkClick = () => {
+    // Just close the dropdown, navigation will happen via ProgressBarLink
     onClose();
   };
 
@@ -43,22 +44,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 value={item.menu}
               >
                 <AccordionTrigger className="px-2">
-                  <div>
-                    <ProgressBarLink
-                      onClick={handleLinkClick}
-                      href={item.href}
-                      className="
-                      font-medium
-                      py-4
-                      px-2
-                      my-6
-                      cursor-pointer                    
-                      rounded-md
-                      "
-                    >
-                      {item.title}
-                    </ProgressBarLink>
-                  </div>
+                  <div className="font-medium py-4 px-2 my-6">{item.title}</div>
                 </AccordionTrigger>
                 <AccordionContent>
                   {item.options.map((option) => {
@@ -82,7 +68,6 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
           } else {
             return (
               <ProgressBarLink
-                onClick={handleLinkClick}
                 key={item.title}
                 href={item.href}
                 className="
@@ -101,6 +86,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
                 hover:underline
                 rounded-md
                 "
+                onClick={handleLinkClick}
               >
                 {item.title}
                 <div>
@@ -113,22 +99,22 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ onClose }) => {
       </Accordion>
       <div className="lg:pt-32">
         <div className="flex items-center justify-center space-x-4">
-          <ProgressBarLink href={"/contact-us"}>
+          <ProgressBarLink href={"/contact-us"} onClick={handleLinkClick}>
             <Button
               className="
-              text-white
-              text-sm
-              font-light
-              bg-sky-500
-              p-6 
-              rounded-[40px]
-              hover:scale-110
-              transition-all
-              duration-300
-              shadow-md
-              hover:bg-sky-700
-              hover:shadow-sky-900
-        "
+               text-white
+               text-sm
+               font-light
+               bg-sky-500
+               p-6 
+               rounded-[40px]
+               hover:scale-110
+               transition-all
+               duration-300
+               shadow-md
+               hover:bg-sky-700
+               hover:shadow-sky-900
+         "
             >
               Contacte-Nos
             </Button>

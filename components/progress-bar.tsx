@@ -33,9 +33,15 @@ export function useProgressBar() {
   return progress;
 }
 
-export function ProgressBar({ className, children }: { className: string, children: ReactNode }) {
-  let progress = useProgress(); 
-  let width = useMotionTemplate`${progress.value}%`; 
+export function ProgressBar({
+  className,
+  children,
+}: {
+  className: string;
+  children: ReactNode;
+}) {
+  let progress = useProgress();
+  let width = useMotionTemplate`${progress.value}%`;
 
   return (
     <ProgressBarContext.Provider value={progress}>
@@ -57,22 +63,41 @@ export function ProgressBar({ className, children }: { className: string, childr
 export function ProgressBarLink({
   href,
   children,
+  onClick,
   ...rest
 }: ComponentProps<typeof Link>) {
-  let progress = useProgressBar(); 
+  let progress = useProgressBar();
   let router = useRouter();
 
   return (
     <Link
       href={href}
       onClick={(e) => {
-        e.preventDefault();
-        progress.start(); 
+        // Call custom onClick first
+        let shouldNavigate = true;
+        if (onClick) {
+          onClick(e);
+          // Check if the onClick prevented default
+          shouldNavigate = !e.defaultPrevented;
+        }
 
-        startTransition(() => {
-          router.push(href.toString());
-          progress.done(); 
-        });
+        // If not prevented, handle navigation with progress bar
+        if (shouldNavigate) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Start progress bar and navigate
+          progress.start();
+
+          startTransition(() => {
+            router.push(href.toString());
+          });
+
+          // Small delay to let the progress bar show before navigation
+          setTimeout(() => {
+            progress.done();
+          }, 100);
+        }
       }}
       {...rest}
     >

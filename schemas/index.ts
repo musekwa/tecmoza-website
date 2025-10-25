@@ -4,11 +4,11 @@ export const contactFormSchema = z.object({
   name: z.string().min(1, { message: "Informe o seu nome" }),
   email: z.string().email({ message: "Informe um email valido" }),
   phone: z.string().min(9, { message: "Informe o seu número de celular" }),
-  companyName: z.optional(z.string()),
-  companyWebsite: z.optional(z.string()),
+  companyName: z.string().optional(),
+  companyWebsite: z.string().optional(),
   service: z.string().min(1, { message: "Selecione um serviço" }),
   message: z.string().min(10, { message: "Deixe sua mensagem" }),
-  isSubscribed: z.boolean().default(false),
+  isSubscribed: z.boolean(),
 });
 
 export const userSubscriptionSchema = z.object({
